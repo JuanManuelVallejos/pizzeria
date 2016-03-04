@@ -1,6 +1,6 @@
 package model;
 
-public class Administrador {
+public class Administrador extends Entity{
 
 	private String nombre;
 	private String apellido;
