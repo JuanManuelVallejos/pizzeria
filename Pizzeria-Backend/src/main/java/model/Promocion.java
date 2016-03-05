@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class Promocion {
+public class Promocion extends Entity{
 	
 	private ArrayList<ItemPedido> items = new ArrayList<ItemPedido>();
 	private Integer precio;
@@ -19,5 +19,6 @@ public class Promocion {
 	public void setPrecio(Integer precio) {
 		this.precio = precio;
 	}
+	public Promocion(){}
 	
 }

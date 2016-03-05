@@ -103,4 +103,22 @@ http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 	<bean id="persistence.administradorrepository" class="repositories.AdministradorDAO">
 		<property name="sessionFactory" ref="persistence.sessionFactory" />
 	</bean>
+<<<<<<< HEAD
+	<bean id="persistence.clienterepository" class="repositories.ClienteDAO">
+		<property name="sessionFactory" ref="persistence.sessionFactory" />
+	</bean>
+	<bean id="persistence.itempedidorepository" class="repositories.ItemPedidoDAO">
+		<property name="sessionFactory" ref="persistence.sessionFactory" />
+	</bean>
+	<bean id="persistence.pedidorepository" class="repositories.PedidoDAO">
+		<property name="sessionFactory" ref="persistence.sessionFactory" />
+	</bean>
+	<bean id="persistence.productorepository" class="repositories.ProductoDAO">
+		<property name="sessionFactory" ref="persistence.sessionFactory" />
+	</bean>
+	<bean id="persistence.promocionrepository" class="repositories.PromocionDAO">
+		<property name="sessionFactory" ref="persistence.sessionFactory" />
+	</bean>
+=======
+>>>>>>> 7057d13ba7fdf3b3c0e453696a1990bcfe19ab36
 </beans>

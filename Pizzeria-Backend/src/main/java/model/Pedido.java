@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class Pedido {
+public class Pedido extends Entity {
 	
 	private ArrayList<ItemPedido> items = new ArrayList<ItemPedido>();
 
@@ -13,6 +13,8 @@ public class Pedido {
 	public void setItems(ArrayList<ItemPedido> items) {
 		this.items = items;
 	}
+	
+	public Pedido(){}
 
 	public void agregarItemPedido(ItemPedido item){
 		this.getItems().add(item);

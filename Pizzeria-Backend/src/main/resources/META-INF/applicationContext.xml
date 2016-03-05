@@ -29,6 +29,14 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 	<jaxrs:server id="globalService">
 		<jaxrs:serviceBeans>
 			<ref bean="administradoresRest" />
+<<<<<<< HEAD
+			<ref bean="clientesRest" />
+			<ref bean="itemsPedidosRest" />
+			<ref bean="pedidosRest" />
+			<ref bean="productosRest" />
+			<ref bean="promocionesRest" />
+=======
+>>>>>>> 7057d13ba7fdf3b3c0e453696a1990bcfe19ab36
 		</jaxrs:serviceBeans>
 		<jaxrs:extensionMappings>
 			<entry key="json" value="application/json" />
@@ -43,11 +51,34 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 		</jaxrs:features>
 	</jaxrs:server>
 	
+<<<<<<< HEAD
+	<bean id="administradoresRest" class="rest.AdministradorRest">
+		<property name="administradorService" ref="services.administrador" />
+	</bean>
+	<bean id="clientesRest" class="rest.ClienteRest">
+		<property name="clienteService" ref="services.cliente" />
+	</bean>
+	<bean id="itemsPedidosRest" class="rest.ItemPedidoRest">
+		<property name="itemPedidoService" ref="services.itempedido" />
+	</bean>
+	<bean id="pedidosRest" class="rest.PedidoRest">
+		<property name="pedidoService" ref="services.pedido" />
+	</bean>
+	<bean id="productosRest" class="rest.ProductoRest">
+		<property name="productoService" ref="services.producto" />
+	</bean>
+	<bean id="promocionesRest" class="rest.PromocionRest">
+		<property name="promocionService" ref="services.promocion" />
+	</bean>
+	
+	
+=======
 	<!-- <bean id="dao.diagnostic" class="ar.edu.unq.desapp.groupb.repositories.DiagnosticDAO" 
 		/> -->
 
 	<bean id="administradoresRest" class="rest.AdministradorRest">
 		<property name="administradorService" ref="services.administrador" />
 	</bean>
+>>>>>>> 7057d13ba7fdf3b3c0e453696a1990bcfe19ab36
 	
 </beans>

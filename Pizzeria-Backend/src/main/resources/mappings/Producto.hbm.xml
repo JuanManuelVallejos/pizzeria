@@ -3,19 +3,13 @@
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field"
 	default-cascade="save-update">
-	<class name="model.Administrador">
+	<class name="model.Producto">
 		<id column="ID" name="id">
 			<generator class="native" />
 		</id>
 
 		<property name="nombre" />
-		<property name="apellido" />
-<<<<<<< HEAD
-		<property name="dni" />
+		<property name="precio" />
 		
-		
-=======
->>>>>>> 7057d13ba7fdf3b3c0e453696a1990bcfe19ab36
-
 	</class>
 </hibernate-mapping>

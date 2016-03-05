@@ -8,11 +8,38 @@
 
 	<!-- beans de spring -->
 	<bean id="services.general" class="services.GeneralService">
+<<<<<<< HEAD
+		<property name="administradorService" ref="services.administrador" />	
+		<property name="clienteService" ref="services.cliente" />
+		<property name="itemPedidoService" ref="services.itempedido" />
+		<property name="pedidoService" ref="services.pedido" />				
+		<property name="productoService" ref="services.producto" />
+		<property name="promocionService" ref="services.promocion" />		
+=======
 		<property name="administradorService" ref="services.administrador" />		
+>>>>>>> 7057d13ba7fdf3b3c0e453696a1990bcfe19ab36
 	</bean>
 
 	<bean id="services.administrador" class="services.AdministradorService">
 		<property name="repository" ref="persistence.administradorrepository" />
 	</bean>
+<<<<<<< HEAD
+	<bean id="services.cliente" class="services.ClienteService">
+		<property name="repository" ref="persistence.clienterepository" />
+	</bean>
+	<bean id="services.itempedido" class="services.ItemPedidoService">
+		<property name="repository" ref="persistence.itempedidorepository" />
+	</bean>
+	<bean id="services.pedido" class="services.PedidoService">
+		<property name="repository" ref="persistence.pedidorepository" />
+	</bean>
+	<bean id="services.producto" class="services.ProductoService">
+		<property name="repository" ref="persistence.productorepository" />
+	</bean>
+	<bean id="services.promocion" class="services.PromocionService">
+		<property name="repository" ref="persistence.promocionrepository" />
+	</bean>
+=======
+>>>>>>> 7057d13ba7fdf3b3c0e453696a1990bcfe19ab36
 
 </beans>

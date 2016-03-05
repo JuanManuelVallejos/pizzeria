@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class Cliente {
+public class Cliente extends Entity{
 	
 	private String nombre;
 	private String apellido;
