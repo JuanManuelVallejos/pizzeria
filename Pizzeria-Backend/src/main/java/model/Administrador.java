@@ -1,10 +1,17 @@
 package model;
 
-public class Administrador {
+public class Administrador extends Entity{
 
 	private String nombre;
 	private String apellido;
+	private Integer dni;
 	
+	public Integer getDni() {
+		return dni;
+	}
+	public void setDni(Integer dni) {
+		this.dni = dni;
+	}
 	public String getNombre() {
 		return nombre;
 	}

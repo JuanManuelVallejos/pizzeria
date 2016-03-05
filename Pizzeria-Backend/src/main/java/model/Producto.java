@@ -1,6 +1,6 @@
 package model;
 
-public class Producto {
+public class Producto extends Entity{
 	
 	private String nombre;
 	private Integer precio;
@@ -18,6 +18,8 @@ public class Producto {
 		this.precio = precio;
 	}
 
+	public Producto(){}
+	
 	public Producto(String nombre, Integer precio){
 		this.setNombre(nombre);
 		this.setPrecio(precio);

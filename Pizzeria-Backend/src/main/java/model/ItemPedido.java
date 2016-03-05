@@ -1,6 +1,6 @@
 package model;
 
-public class ItemPedido {
+public class ItemPedido extends Entity {
 
 	private Producto producto;
 	private Integer cantidad;

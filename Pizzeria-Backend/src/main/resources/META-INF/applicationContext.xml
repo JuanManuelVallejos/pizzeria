@@ -1,0 +1,72 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:cxf="http://cxf.apache.org/core"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+
+	<!-- =========================== -->
+	<!-- =========JAXB / CXF ========= -->
+	<!-- =========================== -->
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider" />
+
+	<bean id='jacksonProvider' class='org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' />
+
+
+	<!-- =========================== -->
+	<!-- =========Servicios ========= -->
+	<!-- =========================== -->
+
+
+
+	<jaxrs:server id="globalService">
+		<jaxrs:serviceBeans>
+			<ref bean="administradoresRest" />
+			<ref bean="clientesRest" />
+			<ref bean="itemsPedidosRest" />
+			<ref bean="pedidosRest" />
+			<ref bean="productosRest" />
+			<ref bean="promocionesRest" />
+		</jaxrs:serviceBeans>
+		<jaxrs:extensionMappings>
+			<entry key="json" value="application/json" />
+			<entry key="xml" value="application/xml" />
+		</jaxrs:extensionMappings>
+		<jaxrs:providers>
+			<ref bean="jaxbProvider" />
+			<ref bean="jacksonProvider" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<cxf:logging />
+		</jaxrs:features>
+	</jaxrs:server>
+	
+	<bean id="administradoresRest" class="rest.AdministradorRest">
+		<property name="administradorService" ref="services.administrador" />
+	</bean>
+	<bean id="clientesRest" class="rest.ClienteRest">
+		<property name="clienteService" ref="services.cliente" />
+	</bean>
+	<bean id="itemsPedidosRest" class="rest.ItemPedidoRest">
+		<property name="itemPedidoService" ref="services.itempedido" />
+	</bean>
+	<bean id="pedidosRest" class="rest.PedidoRest">
+		<property name="pedidoService" ref="services.pedido" />
+	</bean>
+	<bean id="productosRest" class="rest.ProductoRest">
+		<property name="productoService" ref="services.producto" />
+	</bean>
+	<bean id="promocionesRest" class="rest.PromocionRest">
+		<property name="promocionService" ref="services.promocion" />
+	</bean>
+	
+	
+	
+</beans>
