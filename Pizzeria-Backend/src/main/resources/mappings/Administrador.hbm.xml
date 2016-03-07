@@ -10,12 +10,7 @@
 
 		<property name="nombre" />
 		<property name="apellido" />
-<<<<<<< HEAD
 		<property name="dni" />
 		
-		
-=======
->>>>>>> 7057d13ba7fdf3b3c0e453696a1990bcfe19ab36
-
 	</class>
 </hibernate-mapping>

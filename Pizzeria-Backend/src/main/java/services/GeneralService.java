@@ -3,14 +3,11 @@ package services;
 public class GeneralService {
 
 	private AdministradorService administradorService;
-<<<<<<< HEAD
 	private ClienteService clienteService;
 	private ItemPedidoService itemPedidoService;
 	private PedidoService pedidoService;
 	private ProductoService productoService;
 	private PromocionService promocionService;
-=======
->>>>>>> 7057d13ba7fdf3b3c0e453696a1990bcfe19ab36
 
 	public AdministradorService getAdministradorService() {
 		return administradorService;
@@ -19,7 +16,6 @@ public class GeneralService {
 	public void setAdministradorService(AdministradorService administradorService) {
 		this.administradorService = administradorService;
 	}
-<<<<<<< HEAD
 
 	public ClienteService getClienteService() {
 		return clienteService;
@@ -59,9 +55,5 @@ public class GeneralService {
 
 	public void setPromocionService(PromocionService promocionService) {
 		this.promocionService = promocionService;
-	}
-	
-=======
->>>>>>> 7057d13ba7fdf3b3c0e453696a1990bcfe19ab36
-	
+	}	
 }
