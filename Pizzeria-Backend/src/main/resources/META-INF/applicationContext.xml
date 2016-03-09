@@ -65,8 +65,5 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 	</bean>
 	<bean id="promocionesRest" class="rest.PromocionRest">
 		<property name="promocionService" ref="services.promocion" />
-	</bean>
-	
-	
-	
+	</bean>	
 </beans>

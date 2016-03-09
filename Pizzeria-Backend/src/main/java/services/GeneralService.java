@@ -55,7 +55,5 @@ public class GeneralService {
 
 	public void setPromocionService(PromocionService promocionService) {
 		this.promocionService = promocionService;
-	}
-	
-	
+	}	
 }

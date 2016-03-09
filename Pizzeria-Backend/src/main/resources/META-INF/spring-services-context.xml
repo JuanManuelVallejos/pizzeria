@@ -34,5 +34,4 @@
 	<bean id="services.promocion" class="services.PromocionService">
 		<property name="repository" ref="persistence.promocionrepository" />
 	</bean>
-
 </beans>

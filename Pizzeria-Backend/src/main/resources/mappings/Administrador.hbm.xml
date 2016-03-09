@@ -12,7 +12,5 @@
 		<property name="apellido" />
 		<property name="dni" />
 		
-		
-
 	</class>
 </hibernate-mapping>

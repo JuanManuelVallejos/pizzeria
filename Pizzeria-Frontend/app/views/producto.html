@@ -1,0 +1,19 @@
+<h1>CREA TU PRODUCTO</h1>
+
+<form class="form-horizontal" role="form" ng-submit="crearProducto()">
+	<input type="text" class="form-control" placeholder="Nombre del Producto" ng-model="nombre" required>
+	<input type="text" class="form-control" placeholder="Precio del Producto" ng-model="precio" required>
+	<button type="submit" class="btn btn-success">Crear</button>
+</form>
+
+<h2>Productos creados</h2>
+
+<div ng-controller="ProductoCtrl as pr">
+
+	<ul class="example-animate-container">
+		<li class="animate-repeat" ng-repeat="producto in pr.productos">
+	      El producto {{producto.nombre}} sale {{producto.precio}}
+		</li>
+	</ul>
+
+</div>
