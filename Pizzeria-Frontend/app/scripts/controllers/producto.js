@@ -21,14 +21,12 @@ var productoApp = angular.module('desktopApp');
 
 productoApp.controller('ProductoCtrl', function($scope, $http) {
 	
-	var pr = this;
 	var dominio = 'http://localhost:8080/Pizzeria-Backend/rest';	
 	var urlProducto = '/productos';
 
-
-	pr.listaProductos = function(){
+	$scope.listaProductos = function(){
 		$http.get(dominio + urlProducto + '/listar').success(function (data) {
-            pr.productos = data;
+            $scope.productos = data;
         });
 	}
 
@@ -39,7 +37,5 @@ productoApp.controller('ProductoCtrl', function($scope, $http) {
             alert('No se pudo crear el producto, Error='+status);
         });
 	}
-
-	pr.listaProductos();
 
 });

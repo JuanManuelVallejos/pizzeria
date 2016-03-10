@@ -8,10 +8,10 @@
 
 <h2>Productos creados</h2>
 
-<div ng-controller="ProductoCtrl as pr">
+<div class="body" style="z-index: 10;" ng-init="getPlayers()">
 
 	<ul class="example-animate-container">
-		<li class="animate-repeat" ng-repeat="producto in pr.productos">
+		<li class="animate-repeat" ng-repeat="producto in productos">
 	      El producto {{producto.nombre}} sale {{producto.precio}}
 		</li>
 	</ul>
