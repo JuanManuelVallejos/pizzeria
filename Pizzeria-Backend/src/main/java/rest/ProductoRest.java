@@ -6,7 +6,6 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
@@ -36,9 +35,9 @@ public class ProductoRest {
 	}
 	
 	@POST
-	@Path("/crear/{nombre}/{precio}")
+	@Path("/crear")
 	@Produces("application/json")
-	public Response crearProducto(@PathParam("nombre") String nombre, @PathParam("precio") Integer precio){
+	public Response crearProducto(@FormParam("nombre") String nombre, @FormParam("precio") Integer precio){
 		Producto producto = new Producto(nombre, precio);
 		getProductoService().save(producto);
 		return Response.ok(producto).build();

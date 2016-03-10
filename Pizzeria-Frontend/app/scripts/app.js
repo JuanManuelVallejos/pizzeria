@@ -26,10 +26,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/producto', {
-        templateUrl: 'views/producto.html',
-        controller: 'ProductoCtrl',
-        controllerAs: 'producto'
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl',
+        controllerAs: 'about'
       })
 	  .when('/cliente', {
         templateUrl: 'views/cliente.html',
