@@ -2,3 +2,5 @@
 /target
 .classpath
 .project
+/src/main/resources/META-INF/jdbc.properties
+/src/main/resources/META-INF/hibernate.properties
