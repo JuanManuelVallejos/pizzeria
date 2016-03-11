@@ -8,10 +8,10 @@
 			<generator class="native" />
 		</id>
 
-		<list name="items" inverse="false" cascade="all" lazy="false">
-			<key column="itemPedidoID" />
+		<list name="items" cascade="save-update" lazy="false">
+			<key column="promocionID" />
 			<list-index column="id" />
-			<many-to-many class="model.ItemPedido" unique="true"/>
+			<one-to-many class="model.ItemPedido"/>
 		</list>
 		<property name="precio" />
 

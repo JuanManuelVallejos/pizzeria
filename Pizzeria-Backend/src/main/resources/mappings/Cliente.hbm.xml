@@ -13,6 +13,12 @@
 		<property name="dni" />
 		<property name="direccion" />
 		<property name="numeroDeCliente" />
-
+		
+		<list name="pedidos" cascade="save-update" lazy="false">
+			<key column="clienteID" />
+			<list-index column="id" />
+			<one-to-many class="model.Pedido"/>
+		</list>
+		
 	</class>
 </hibernate-mapping>
