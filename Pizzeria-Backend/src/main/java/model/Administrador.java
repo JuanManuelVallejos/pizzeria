@@ -32,4 +32,8 @@ public class Administrador extends Entity{
 		this.setApellido(apellido);
 	}
 	
+	public void confirmarPedidoACliente(Pedido pedido, Cliente cliente){
+		pedido.pedidoEntregadoAlCliente(cliente);
+	}
+	
 }

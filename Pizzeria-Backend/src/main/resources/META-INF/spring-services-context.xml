@@ -34,4 +34,7 @@
 	<bean id="services.promocion" class="services.PromocionService">
 		<property name="repository" ref="persistence.promocionrepository" />
 	</bean>
+	<bean id="services.objetocompra" class="services.ObjetoCompraService">
+		<property name="repository" ref="persistence.objetocomprarepository" />
+	</bean>
 </beans>

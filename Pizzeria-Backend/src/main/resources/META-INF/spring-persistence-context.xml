@@ -117,4 +117,7 @@ http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 	<bean id="persistence.promocionrepository" class="repositories.PromocionDAO">
 		<property name="sessionFactory" ref="persistence.sessionFactory" />
 	</bean>
+	<bean id="persistence.objetocomprarepository" class="repositories.ObjetoCompraDAO">
+		<property name="sessionFactory" ref="persistence.sessionFactory" />
+	</bean>
 </beans>

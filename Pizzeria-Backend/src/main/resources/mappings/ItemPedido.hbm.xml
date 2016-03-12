@@ -9,7 +9,7 @@
 		</id>
 
 		<property name="cantidad" />
-		<one-to-one name="producto" class="model.Producto"
+		<one-to-one name="objetoCompra" class="model.ObjetoCompra"
 			cascade="save-update" lazy="false"></one-to-one>
 		
 		

@@ -2,14 +2,14 @@ package model;
 
 public class ItemPedido extends Entity {
 
-	private Producto producto;
+	private ObjetoCompra objetoCompra;
 	private Integer cantidad;
 	
-	public Producto getProducto() {
-		return producto;
+	public ObjetoCompra getObjetoCompra() {
+		return objetoCompra;
 	}
-	public void setProducto(Producto producto) {
-		this.producto = producto;
+	public void setObjetoCompra(ObjetoCompra objetoCompra) {
+		this.objetoCompra = objetoCompra;
 	}
 	public Integer getCantidad() {
 		return cantidad;
@@ -20,8 +20,12 @@ public class ItemPedido extends Entity {
 	
 	public ItemPedido(){}
 	
-	public ItemPedido(Producto producto, Integer cantidad){
-		this.setProducto(producto);
+	public ItemPedido(ObjetoCompra objetoCompra, Integer cantidad){
+		this.setObjetoCompra(objetoCompra);
 		this.setCantidad(cantidad);	
+	}
+	
+	public Integer precioTotalItem(){
+		return this.getObjetoCompra().getPrecio() * this.getCantidad();
 	}
 }

@@ -8,6 +8,7 @@ public class Cliente extends Entity{
 	private String apellido;
 	private String direccion;
 	private Integer dni;
+	private Integer telefono;
 	private Integer numeroDeCliente;
 	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
 	
@@ -48,6 +49,12 @@ public class Cliente extends Entity{
 		this.dni = dni;
 	}
 	
+	public Integer getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(Integer telefono) {
+		this.telefono = telefono;
+	}
 	public Cliente(){}
 	
 	public Cliente(String nombre, String apellido, String direccion, Integer dni, Integer nroDeCliente){
@@ -56,5 +63,25 @@ public class Cliente extends Entity{
 		this.setDireccion(direccion);
 		this.setDni(dni);
 		this.setNumeroDeCliente(nroDeCliente);
+	}
+	
+	public void agregarPedidoAlHistorial(Pedido pedido){
+		this.getPedidos().add(pedido);
+	}
+	
+	public ArrayList<Pedido> pedidosActivos(){
+		
+		ArrayList<Pedido> activos = new ArrayList<Pedido>();
+		
+		for(Pedido each : this.getPedidos()){
+			if(!each.isRealizado()){
+				activos.add(each);
+			}
+		}		
+		return activos;		
+	}
+	
+	public boolean tienePedidosPendientes(){
+		return this.pedidosActivos().size() > 0;
 	}
 }

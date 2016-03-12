@@ -12,12 +12,13 @@ import javax.ws.rs.core.Response;
 import model.ItemPedido;
 import model.Producto;
 import services.ItemPedidoService;
+import services.ProductoService;
 
 @Path("/itemspedidos")
 public class ItemPedidoRest {
 	
 	private ItemPedidoService itemPedidoService;
-
+	
 	public ItemPedidoService getItemPedidoService() {
 		return itemPedidoService;
 	}
@@ -41,6 +42,7 @@ public class ItemPedidoRest {
 			@FormParam("cantidadProducto") Integer cantidadProducto){
 		Producto producto = new Producto(nombreProducto, precioProducto);
 		ItemPedido item = new ItemPedido(producto, cantidadProducto);
+
 		getItemPedidoService().save(item);
 		return Response.ok(item).build();
 	}

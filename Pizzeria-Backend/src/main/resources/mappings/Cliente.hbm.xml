@@ -12,6 +12,7 @@
 		<property name="apellido" />
 		<property name="dni" />
 		<property name="direccion" />
+		<property name="telefono" />
 		<property name="numeroDeCliente" />
 		
 		<list name="pedidos" cascade="save-update" lazy="false">
