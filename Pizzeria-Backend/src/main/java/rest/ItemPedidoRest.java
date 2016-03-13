@@ -12,7 +12,6 @@ import javax.ws.rs.core.Response;
 import model.ItemPedido;
 import model.Producto;
 import services.ItemPedidoService;
-import services.ProductoService;
 
 @Path("/itemspedidos")
 public class ItemPedidoRest {

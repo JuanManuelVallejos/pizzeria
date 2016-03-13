@@ -1,9 +1,19 @@
 package model;
 
+@SuppressWarnings("serial")
 public class ObjetoCompra extends Entity {
 
 	private String nombre;
 	private Integer precio;
+	
+	public ObjetoCompra(){
+		
+	}
+	
+	public ObjetoCompra(String nombre, Integer precio){
+		this.setNombre(nombre);
+		this.setPrecio(precio);
+	}
 	
 	public Integer getPrecio() {
 		return precio;
@@ -16,14 +26,5 @@ public class ObjetoCompra extends Entity {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	
-	public ObjetoCompra(){
-		
-	}
-	
-	public ObjetoCompra(String nombre, Integer precio){
-		this.setNombre(nombre);
-		this.setPrecio(precio);
 	}
 }

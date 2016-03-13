@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("serial")
 public class Cliente extends Entity{
 	
 	private String nombre;
@@ -11,6 +12,16 @@ public class Cliente extends Entity{
 	private Integer telefono;
 	private Integer numeroDeCliente;
 	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+	
+	public Cliente(){}
+	
+	public Cliente(String nombre, String apellido, String direccion, Integer dni, Integer nroDeCliente){
+		this.setNombre(nombre);
+		this.setApellido(apellido);
+		this.setDireccion(direccion);
+		this.setDni(dni);
+		this.setNumeroDeCliente(nroDeCliente);
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -55,16 +66,7 @@ public class Cliente extends Entity{
 	public void setTelefono(Integer telefono) {
 		this.telefono = telefono;
 	}
-	public Cliente(){}
-	
-	public Cliente(String nombre, String apellido, String direccion, Integer dni, Integer nroDeCliente){
-		this.setNombre(nombre);
-		this.setApellido(apellido);
-		this.setDireccion(direccion);
-		this.setDni(dni);
-		this.setNumeroDeCliente(nroDeCliente);
-	}
-	
+		
 	public void agregarPedidoAlHistorial(Pedido pedido){
 		this.getPedidos().add(pedido);
 	}

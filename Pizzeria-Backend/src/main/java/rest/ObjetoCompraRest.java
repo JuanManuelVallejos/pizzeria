@@ -2,16 +2,11 @@ package rest;
 
 import java.util.List;
 
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
 
-import model.ItemPedido;
 import model.ObjetoCompra;
-import model.Producto;
 import services.ObjetoCompraService;
 
 @Path("/objetoscompra")

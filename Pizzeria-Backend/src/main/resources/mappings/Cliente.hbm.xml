@@ -3,21 +3,21 @@
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field"
 	default-cascade="save-update">
-	<class name="model.Cliente">
+	<class name="model.Cliente" table="CLIENTE">
 		<id column="ID" name="id">
 			<generator class="native" />
 		</id>
 
-		<property name="nombre" />
-		<property name="apellido" />
-		<property name="dni" />
-		<property name="direccion" />
-		<property name="telefono" />
-		<property name="numeroDeCliente" />
+		<property name="nombre" column="NOMBRE"/>
+		<property name="apellido" column="APELLIDO"/>
+		<property name="dni" column="DNI"/>
+		<property name="direccion" column="DIRECCION"/>
+		<property name="telefono" column="TELEFONO"/>
+		<property name="numeroDeCliente" column="NUMERO_DE_CLIENTE"/>
 		
 		<list name="pedidos" cascade="save-update" lazy="false">
-			<key column="clienteID" />
-			<list-index column="id" />
+			<key column="CLIENTE_ID" />
+			<list-index column="ID" />
 			<one-to-many class="model.Pedido"/>
 		</list>
 		

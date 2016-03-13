@@ -2,10 +2,17 @@ package model;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("serial")
 public class Pedido extends Entity {
 	
 	private ArrayList<ItemPedido> items = new ArrayList<ItemPedido>();
 	private boolean realizado = false;
+	
+	public Pedido(){}
+
+	public void agregarItemPedido(ItemPedido item){
+		this.getItems().add(item);
+	}
 
 	public ArrayList<ItemPedido> getItems() {
 		return items;
@@ -21,12 +28,6 @@ public class Pedido extends Entity {
 
 	public void setRealizado(boolean realizado) {
 		this.realizado = realizado;
-	}
-
-	public Pedido(){}
-
-	public void agregarItemPedido(ItemPedido item){
-		this.getItems().add(item);
 	}
 	
 	public void agregarProductoYCantidad(Producto producto, Integer cantidad){

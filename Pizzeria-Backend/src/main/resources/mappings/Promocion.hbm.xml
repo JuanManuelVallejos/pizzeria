@@ -4,12 +4,11 @@
 <hibernate-mapping default-access="field"
 	default-cascade="save-update">
 	
-	<subclass name="model.Promocion" discriminator-value="prm" extends="model.ObjetoCompra">
+	<subclass name="model.Promocion" discriminator-value="PRODUCTO" extends="model.ObjetoCompra">
 		<list name="productos" cascade="save-update" lazy="false">
-			<key column="promocionID" />
-			<list-index column="id" />
+			<key column="PROMOCION:ID" />
+			<list-index column="ID" />
 			<one-to-many class="model.Producto"/>
 		</list>
-
 	</subclass>
 </hibernate-mapping>

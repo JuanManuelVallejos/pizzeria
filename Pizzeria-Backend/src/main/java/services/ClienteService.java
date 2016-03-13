@@ -14,5 +14,4 @@ public class ClienteService extends GenericService<Cliente> {
 	public Cliente buscarPorNumeroDeCliente(String numeroDeCliente) {
 		return ((ClienteDAO) this.getRepository()).buscarPorNumeroDeCliente(numeroDeCliente);
 	}
-	
 }

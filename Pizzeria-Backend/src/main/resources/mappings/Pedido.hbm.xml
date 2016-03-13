@@ -3,16 +3,17 @@
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field"
 	default-cascade="save-update">
-	<class name="model.Pedido">
+	<class name="model.Pedido" table="PEDIDO">
 		<id column="ID" name="id">
 			<generator class="native" />
 		</id>
 		
+		<property name="realizado" column="REALIZADO"/>
+		
 		<list name="items" cascade="save-update">
-        	<key column="pedidoId"/>
-        	<list-index column="id"/>
+        	<key column="PEDIDO_ID"/>
+        	<list-index column="ID"/>
         	<one-to-many class="model.ItemPedido"/>
     	</list>
-
 	</class>
 </hibernate-mapping>

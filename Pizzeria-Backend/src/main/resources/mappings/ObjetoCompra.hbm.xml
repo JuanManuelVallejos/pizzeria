@@ -3,13 +3,13 @@
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field"
 	default-cascade="save-update">
-	<class name="model.ObjetoCompra">
+	<class name="model.ObjetoCompra" table="OBJETO_COMPRA">
 		<id column="ID" name="id">
 			<generator class="native" />
 		</id>
-		<discriminator column="DISC" type="string" />
-		<property name="nombre" />
-		<property name="precio" />
+		<discriminator type="string" column="TIPO"/>
+		<property name="nombre" column="NOMBRE"/>
+		<property name="precio" column="PRECIO"/>
 		
 	</class>
 </hibernate-mapping>
