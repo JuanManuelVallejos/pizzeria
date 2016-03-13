@@ -10,19 +10,31 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 import model.Cliente;
+import model.Pedido;
 import services.ClienteService;
+import services.PedidoService;
 
 @Path("/clientes")
 public class ClienteRest {
 	
 	private ClienteService clienteService;
+	private PedidoService pedidoService;
 	
 	public ClienteService getClienteService() {
 		return clienteService;
 	}
 
-	public void setClienteService(ClienteService clienteService) {
+	public void setClienteService(ClienteService clienteService, PedidoService pedidoService) {
 		this.clienteService = clienteService;
+		this.pedidoService = pedidoService;
+	}
+	
+	public PedidoService getPedidoService() {
+		return pedidoService;
+	}
+
+	public void setPedidoService(PedidoService pedidoService) {
+		this.pedidoService = pedidoService;
 	}
 
 	@GET
@@ -42,4 +54,13 @@ public class ClienteRest {
 		getClienteService().save(cliente);
 		return Response.ok(cliente).build();
 	}
+
+	@GET
+	@Path("/pedidosActivos/{idCliente}")
+	@Produces("application/json")
+	public List<Pedido> obtenerPedidosActivos(@PathParam("idCliente") String idCliente) {
+		List<Pedido> pedidos = getPedidoService().obtenerPedidosActivos(idCliente);
+        return pedidos;
+	}
+	
 }

@@ -70,20 +70,4 @@ public class Cliente extends Entity{
 	public void agregarPedidoAlHistorial(Pedido pedido){
 		this.getPedidos().add(pedido);
 	}
-	
-	public ArrayList<Pedido> pedidosActivos(){
-		
-		ArrayList<Pedido> activos = new ArrayList<Pedido>();
-		
-		for(Pedido each : this.getPedidos()){
-			if(!each.isRealizado()){
-				activos.add(each);
-			}
-		}		
-		return activos;		
-	}
-	
-	public boolean tienePedidosPendientes(){
-		return this.pedidosActivos().size() > 0;
-	}
 }
