@@ -1,0 +1,96 @@
+
+body { 
+	            background: url('img/pizzafondo.jpg') no-repeat center center fixed;
+	            -moz-background-size: cover;
+	            -webkit-background-size: cover;
+	            -o-background-size: cover;
+	            background-size: cover;
+	        }
+			.superior{ 
+				width: 100%;
+			    height: 400px;    
+			    //border: 1px solid red;
+			    float:left;
+			}
+			.superior1{ 
+				width: 25%;
+			    height: 400px;    
+			    //border: 1px solid blue;
+			    float:left;
+			}
+			.superior2{ 
+				width: 50%;
+			    height: 400px;    
+			    //border: 1px solid blue;
+			    float:left;
+			}
+			.boxImage{
+				margin-top: 20px;
+			    margin-left: 140px;
+			}
+			.logoImage{
+				margin-top: 50px;
+			    margin-left: 50px;
+			}
+			.superior3{ 
+				width: 25%;
+			    height: 400px;    
+			    //border: 1px solid blue;
+			    float:left;
+			}
+			.inferior{
+				width: 100%;
+			    height: 300px;    
+			    //border: 1px solid red;
+			    margin-top: 20px;
+			    float:left;
+			}
+			.inferior1{
+				width: 60%;
+			    height: 200px;    
+			    //border: 1px solid red;
+			    margin-top: 50px;
+			    float:right;
+			}
+			.inferior2{
+				width: 20%;
+			    height: 200px;    
+			    //border: 1px solid red;
+			    margin-top: 50px;
+			    float:right;
+			}
+			.botonLogin{
+				margin-top: 50px;
+			    margin-left: 100px;
+			}
+			.btn-circle {
+			  width: 30px;
+			  height: 30px;
+			  text-align: center;
+			  padding: 6px 0;
+			  font-size: 12px;
+			  line-height: 1.42;
+			  border-radius: 15px;
+			}
+			.btn-circle.btn-lg {
+			  width: 100px;
+			  height: 100px;
+			  padding: 10px 16px;
+			  font-size: 18px;
+			  line-height: 1.33;
+			  border-radius: 55px;
+			}
+			.botonAyuda{
+				margin-top: 80px;
+			    margin-left: 140px;
+			}
+			.botonimagen{
+			  background-image:url(img/ayudaPizza.png);
+			  height:100px;
+			  width:100px;
+			 
+			}
+				
+			.container {
+			  max-width: 500px;
+			}

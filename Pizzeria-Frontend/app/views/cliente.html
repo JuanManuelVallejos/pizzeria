@@ -1,0 +1,37 @@
+<h1>Nuevo cliente</h1>
+
+<form class="form-horizontal" role="form" ng-submit="crearCliente()">
+  
+	<div class="input-group input-group-lg">
+  					<span class="input-group-addon" id="sizing-addon1">Nombre</span>
+  					<input type="text" class="form-control" placeholder="Nombre del cliente" ng-model="nombre" aria-describedby="sizing-addon1" required>
+	</div>
+	</br>
+	<div class="input-group input-group-lg">
+  					<span class="input-group-addon" id="sizing-addon1">Apellido</span>
+  					<input type="text" class="form-control" placeholder="Apellido del cliente" ng-model="apellido" aria-describedby="sizing-addon1" required>
+	</div>
+	</br>
+	<div class="input-group input-group-lg">
+  					<span class="input-group-addon" id="sizing-addon1">Direccion</span>
+  					<input type="text" class="form-control" placeholder="Direccion del cliente" ng-model="direccion" aria-describedby="sizing-addon1" required>
+	</div>
+	</br>
+	<div class="input-group input-group-lg">
+  					<span class="input-group-addon" id="sizing-addon1">DNI</span>
+  					<input type="text" class="form-control" placeholder="DNI del cliente" ng-model="dni" aria-describedby="sizing-addon1" required>
+	</div>
+	</br>
+	<div class="input-group input-group-lg">
+  					<span class="input-group-addon" id="sizing-addon1">Número de cliente</span>
+  					<input type="text" class="form-control" placeholder="Nuevo numero del cliente" ng-model="nroDeCliente" aria-describedby="sizing-addon1" required>
+	</div>
+	</br>
+	
+	
+  </br>
+  
+  <button type="submit" class="btn btn-success">Crear</button>
+  <a class="btn btn-sm btn-danger" ng-click="cancelar()">Cancelar</a>
+  
+</form>
