@@ -54,7 +54,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 	</bean>
 	<bean id="clientesRest" class="rest.ClienteRest">
 		<property name="clienteService" ref="services.cliente" />
-		<property name="pedidoService" ref="services.Pedido" />
+		<property name="pedidoService" ref="services.pedido" />
 	</bean>
 	<bean id="itemsPedidosRest" class="rest.ItemPedidoRest">
 		<property name="itemPedidoService" ref="services.itempedido" />

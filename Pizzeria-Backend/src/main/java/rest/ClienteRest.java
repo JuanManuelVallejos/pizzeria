@@ -24,9 +24,8 @@ public class ClienteRest {
 		return clienteService;
 	}
 
-	public void setClienteService(ClienteService clienteService, PedidoService pedidoService) {
+	public void setClienteService(ClienteService clienteService) {
 		this.clienteService = clienteService;
-		this.pedidoService = pedidoService;
 	}
 	
 	public PedidoService getPedidoService() {
