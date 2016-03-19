@@ -6,7 +6,7 @@
 	
 	<subclass name="model.Promocion" discriminator-value="PRODUCTO" extends="model.ObjetoCompra">
 		<list name="productos" cascade="save-update" lazy="false">
-			<key column="PROMOCION:ID" />
+			<key column="PROMOCION_ID" />
 			<list-index column="ID" />
 			<one-to-many class="model.Producto"/>
 		</list>
