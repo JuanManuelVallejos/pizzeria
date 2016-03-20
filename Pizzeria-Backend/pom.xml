@@ -268,7 +268,7 @@
 		</dependency>
 
 		<!-- Jackson -->
-
+ 
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
@@ -292,7 +292,7 @@
 			<artifactId>jetty-servlets</artifactId>
 			<version>9.3.0.M2</version>
 		</dependency>
-
+		
 	</dependencies>
 
 	<properties>

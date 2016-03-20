@@ -1,8 +1,8 @@
 package repositories;
 
-import java.util.List;
-
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 import model.Cliente;
 
@@ -15,43 +15,17 @@ public class ClienteDAO extends HibernateGenericDAO<Cliente> implements GenericR
 		return Cliente.class;
 	}
 	
-	public Cliente buscarPorDni(String dni) {
-		
+	public Cliente buscarPorDni(Integer dni) {		
 		Session session = this.getHibernateTemplate().getSessionFactory().openSession();
-        try {
-        	 String queryStr = " SELECT e FROM " + this.persistentClass.getName() + " AS e WHERE e.dni like :dni";
-
-             @SuppressWarnings("unchecked")
-			List<Cliente> clientes = session.createQuery(queryStr).setParameter("dni", dni).list();
-             
-             if(clientes.size() == 0){
-            	 return null;
-             }else{
-            	 return clientes.get(0);
-             }
-
-        } finally {
-            session.close();
-        }
+		Criteria criteria = session.createCriteria(Cliente.class);
+		criteria.add(Restrictions.eq("DNI", dni));
+		return (Cliente) criteria.uniqueResult();
 	}
 
-	public Cliente buscarPorNumeroDeCliente(String numeroDeCliente) {
-		
+	public Cliente buscarPorNumeroDeCliente(Integer numeroDeCliente) {	
 		Session session = this.getHibernateTemplate().getSessionFactory().openSession();
-	    try {
-	    	 String queryStr = " SELECT e FROM " + this.persistentClass.getName() + " AS e WHERE e.dni like :numeroDeCliente";
-	
-	         @SuppressWarnings("unchecked")
-			List<Cliente> clientes = session.createQuery(queryStr).setParameter("numeroDeCliente", numeroDeCliente).list();
-	         
-	         if(clientes.size() == 0){
-	        	 return null;
-	         }else{
-	        	 return clientes.get(0);
-	         }
-	
-	    } finally {
-	        session.close();
-	    }
+		Criteria criteria = session.createCriteria(Cliente.class);
+		criteria.add(Restrictions.eq("NUMERO_DE_CLIENTE", numeroDeCliente));
+		return (Cliente) criteria.uniqueResult();
 	}
 }

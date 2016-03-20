@@ -57,7 +57,7 @@ public class ClienteRest {
 	@GET
 	@Path("/pedidosActivos/{idCliente}")
 	@Produces("application/json")
-	public List<Pedido> obtenerPedidosActivos(@PathParam("idCliente") String idCliente) {
+	public List<Pedido> obtenerPedidosActivos(@PathParam("idCliente") int idCliente) {
 		List<Pedido> pedidos = getPedidoService().obtenerPedidosActivos(idCliente);
         return pedidos;
 	}

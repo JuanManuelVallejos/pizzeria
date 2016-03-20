@@ -7,11 +7,11 @@ public class ClienteService extends GenericService<Cliente> {
 
 	private static final long serialVersionUID = 7810311595651598047L;
 
-	public Cliente buscarPorDni(String dni) {
+	public Cliente buscarPorDni(Integer dni) {
 		return ((ClienteDAO) this.getRepository()).buscarPorDni(dni);
 	}
 	
-	public Cliente buscarPorNumeroDeCliente(String numeroDeCliente) {
+	public Cliente buscarPorNumeroDeCliente(Integer numeroDeCliente) {
 		return ((ClienteDAO) this.getRepository()).buscarPorNumeroDeCliente(numeroDeCliente);
 	}
 }

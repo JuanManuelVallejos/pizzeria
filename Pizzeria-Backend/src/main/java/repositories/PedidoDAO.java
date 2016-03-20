@@ -18,13 +18,15 @@ public class PedidoDAO extends HibernateGenericDAO<Pedido> implements GenericRep
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Pedido> obtenerPedidosActivos(String idCliente){
+	public List<Pedido> obtenerPedidosActivos(int idCliente){
 		Session session = this.getHibernateTemplate().getSessionFactory().openSession();
 		Criteria criteria = session.createCriteria(Pedido.class);
 		criteria.add(Restrictions.eq("ID", idCliente));
-		criteria.add(Restrictions.eq("REALIZADO", 1));
+		criteria.add(Restrictions.eq("REALIZADO", 0));
 		return criteria.list();
 	}
 	
-	//agregar tiene pedidos activos
+	public boolean tienePedidosActivos(int idCliente){
+		return this.obtenerPedidosActivos(idCliente).size() > 0;
+	}
 }
