@@ -1,6 +1,11 @@
-<ul class="navigation">
+<ul class="navigation" id="productos">
     <li ng-repeat="producto in productos" class="producto">{{producto.nombre}}</li>
 </ul>
+<p>Ejemplo agregar producto (recagar pagina)</p>
+<input ng-model="nombreProducto">
+<input ng-model="precioProducto">
+<a ng-Click="crearProducto()" class="btn btn-sm btn-danger" >Agregar!!</a>
 
+<br>
 <input ng-model="ejemplo_de_binfding">
 <p>Esto anda {{ejemplo_de_binfding}}!</p>
