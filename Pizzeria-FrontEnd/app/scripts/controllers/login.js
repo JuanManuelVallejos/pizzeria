@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name pizzeriaFrontEndApp.controller:ClienteCtrl
+ * @name pizzeriaFrontEndApp.controller:LoginCtrl
  * @description
- * # ClienteCtrl
+ * # LoginCtrl
  * Controller of the pizzeriaFrontEndApp
  */
 angular.module('pizzeriaFrontEndApp')
-  .controller('ClienteCtrl', function () {
+  .controller('LoginCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

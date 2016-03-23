@@ -57,10 +57,10 @@ angular
         controller: 'ItempedidoCtrl',
         controllerAs: 'itempedido'
       })
-      .when('/cliente', {
-        templateUrl: 'views/cliente.html',
-        controller: 'ClienteCtrl',
-        controllerAs: 'cliente'
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
       })
       .otherwise({
         redirectTo: '/'

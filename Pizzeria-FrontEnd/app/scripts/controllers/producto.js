@@ -15,6 +15,13 @@ angular.module('pizzeriaFrontEndApp')
       'Karma'
     ];
 	
+
+  $scope.cargarProductos = function(){
+    $http.get('http://localhost:8080/Pizzeria-Backend/rest/productos/listar').success(function (data) {
+          $scope.productos = data;
+      });
+  }
+
 	$scope.crearProducto = function() {
        // $http.post('http://localhost:8080/Pizzeria-Backend/rest/productos/crear', {nombre: $scope.nombreProducto, precio: $scope.precioProducto}).success(function (data) {     			
 		//})
@@ -33,14 +40,8 @@ angular.module('pizzeriaFrontEndApp')
             data: {nombre: $scope.nombreProducto, precio: $scope.precioProducto}
 
         }).success(function (data) {});
-		
+        $scope.cargarProductos();
     }
-
-	$scope.cargarProductos = function(){
-		$http.get('http://localhost:8080/Pizzeria-Backend/rest/productos/listar').success(function (data) {
-        	$scope.productos = data;
-    	});
-	}
 
 	$scope.cargarProductos();
 
