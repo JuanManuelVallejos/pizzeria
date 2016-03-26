@@ -39,8 +39,10 @@ angular.module('pizzeriaFrontEndApp')
 
             data: {nombre: $scope.nombreProducto, precio: $scope.precioProducto}
 
-        }).success(function (data) {});
-        $scope.cargarProductos();
+        }).success(function (data) {
+          $scope.productos.push(data);
+          $scope.cargarProductos();
+        });
     }
 
 	$scope.cargarProductos();

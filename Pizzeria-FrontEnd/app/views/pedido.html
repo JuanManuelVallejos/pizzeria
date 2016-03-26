@@ -1,1 +1,199 @@
-<p>This is the pedido view.</p>
+<style>
+	.logoImage{
+		margin-top: 50px;
+	    margin-left: 10px;
+	}
+	.carousel-inner > .item > img,
+		.carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+	}
+	th:first-child {
+		-moz-border-radius: 6px 0 0 0;
+		-webkit-border-radius: 6px 0 0 0;
+		border-radius: 6px 0 0 0;
+	}
+	th:last-child {
+		-moz-border-radius: 0 6px 0 0;
+		-webkit-border-radius: 0 6px 0 0;
+		border-radius: 0 6px 0 0;
+	}
+</style>
+
+<div class="row">
+    <div class="col-md-2 col-md-offset-1">
+        <img src="images/Logo.png" alt="Pizzeria">
+    </div>
+    <div class="col-md-9">
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="images/promo1.jpg" alt="Chania" width="460" height="345">
+                    <div class="carousel-caption">
+                        <h3>Promo 1</h3>
+                        <p>Con la compra de la pizza de la casa y una Coca de 1.5 lts, te llevas un faina</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/promo2.jpg" alt="Chania" width="460" height="345">
+                    <div class="carousel-caption">
+                        <h3>Promo 2</h3>
+                        <p>Con la compra de dos pizzas de verduras tenes un descuento del %20 en la tercer pizza </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/promo3.jpg" alt="Flower" width="460" height="345">
+                    <div class="carousel-caption">
+                        <h3>Promo 3</h3>
+                        <p>Con al compra de una pizza de jamon y otra de cebolla te llevas una Coca de 2.15 lts</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/promo4.jpg" alt="Flower" width="460" height="345">
+                    <div class="carousel-caption">
+                        <h3>Promo 4</h3>
+                        <p>Con la compra de una pizza mixta y una Coca de 3 lts te llevas media pizza muzzarella</p>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row" style="background-color: black;">
+    <div class="col-md-2">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Hacer Pedido</a></li>
+                    <li><a href="#">Pedidos Realizados</a></li>
+                    <li><a href="#">Pedir Promoción</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="col-md-7">
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat1.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat2.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat3.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat4.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat5.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat6.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat7.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat8.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat1.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat2.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat3.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                <img class="img-responsive" src="images/cat4.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3" style="background-image: url(images/cuenta.jpg);">
+        <center>
+            <h1><span class="label label-success">Cuenta</span></h1>
+            <br> 	
+            <table class="table">
+                <thead>
+                    <tr class="success">
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active">
+                        <td>Muzzarella</td>
+                        <td>2</td>
+                        <td>200</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Especial</td>
+                        <td>1</td>
+                        <td>120</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Coca cola 3L</td>
+                        <td>1</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="success">Total</td>
+                        <td class="success">370</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-success">Realizar pedido</button>
+        </center>
+        <br>
+    </div>
+</div>

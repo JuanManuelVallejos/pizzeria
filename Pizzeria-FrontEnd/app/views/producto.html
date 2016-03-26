@@ -1,11 +1,53 @@
-<ul class="navigation">
-    <li ng-repeat="producto in productos">{{producto.nombre}}</li>
-</ul>
-<p>Ejemplo agregar producto (recagar pagina)</p>
-<input ng-model="nombreProducto">
-<input ng-model="precioProducto">
-<a ng-Click="crearProducto()" class="btn btn-sm btn-danger" >Agregar!!</a>
+<style>
+	th:first-child {
+		-moz-border-radius: 6px 0 0 0;
+		-webkit-border-radius: 6px 0 0 0;
+		border-radius: 6px 0 0 0;
+	}
+	th:last-child {
+		-moz-border-radius: 0 6px 0 0;
+		-webkit-border-radius: 0 6px 0 0;
+		border-radius: 0 6px 0 0;
+	}
+</style>
+<div class="row">
+	<div class="col-md-2 col-md-offset-4" style="border: thin solid black">
+		<h2> Productos</h2>
+	</div>
+</div>
 
-<br>
-<input ng-model="ejemplo_de_binfding">
-<p>Esto anda {{ejemplo_de_binfding}}!</p>
+<div class="row">
+	<div class="col-md-2 col-md-offset-4" style="border: thin solid black">
+		<label>Nombre:</label>
+		<input type="text" class="form-control" ng-model="nombreProducto" placeholder="Ingrese un nombre..."/>
+		<a ng-Click="crearProducto()" class="btn btn-success">Agregar producto</a>
+	</div>
+
+	<div class="col-md-2" style="border: thin solid black">
+		<label>Precio:</label>
+		<input type="number" class="form-control" ng-model="precioProducto" placeholder="Ingrese un precio..."/>
+	</div>
+
+</div>
+
+<div class="row">
+	<br>
+	<div class="col-md-4 col-md-offset-4">
+		<table class="table">
+			<thead>
+			    <tr class="success">
+			        <th>Producto</th>
+			        <th>Precio</th>
+			        <th style="border: thin solid black">Acciones</th>
+			    </tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="producto in productos">
+		        <td>{{ producto.nombre }}</td>
+		        <td>${{ producto.precio }}</td>
+		        <th style="border: thin solid black"><a class="btn btn-sm"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></th>
+		     </tr>
+			</tbody>
+		</table>
+	</div>
+</div>
