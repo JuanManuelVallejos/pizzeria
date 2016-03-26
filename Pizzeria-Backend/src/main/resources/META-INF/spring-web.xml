@@ -7,6 +7,5 @@
 	
 	<import resource="spring-persistence-context.xml"/>
     <import resource="spring-services-context.xml"/>
-    <import resource="applicationContext.xml"/>
-    
+    <import resource="applicationContext.xml"/>    
 </beans>

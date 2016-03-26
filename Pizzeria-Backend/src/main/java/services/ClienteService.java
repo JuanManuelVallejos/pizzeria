@@ -1,5 +1,6 @@
 package services;
 
+import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
 import repositories.ClienteDAO;
 
@@ -13,5 +14,9 @@ public class ClienteService extends GenericService<Cliente> {
 	
 	public Cliente buscarPorNumeroDeCliente(Integer numeroDeCliente) {
 		return ((ClienteDAO) this.getRepository()).buscarPorNumeroDeCliente(numeroDeCliente);
+	}
+
+	public Cliente obtenerClientePorUsuarioYPassword(int usuario, String password) throws UsuarioOPasswordInvalido {
+		return ((ClienteDAO) this.getRepository()).obtenerClientePorUsuarioYPassword(usuario, password);
 	}
 }

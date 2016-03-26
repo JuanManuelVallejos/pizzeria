@@ -11,16 +11,18 @@ public class Cliente extends Entity{
 	private Integer dni;
 	private Integer telefono;
 	private Integer numeroDeCliente;
-	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+	private String password;
+	private ArrayList<Pedido> pedidos;
 	
 	public Cliente(){}
 	
-	public Cliente(String nombre, String apellido, String direccion, Integer dni, Integer nroDeCliente){
+	public Cliente(String nombre, String apellido, String direccion, Integer dni, Integer nroDeCliente, String password){
 		this.setNombre(nombre);
 		this.setApellido(apellido);
 		this.setDireccion(direccion);
 		this.setDni(dni);
 		this.setNumeroDeCliente(nroDeCliente);
+		this.setPassword(password);
 	}
 	
 	public String getNombre() {
@@ -69,5 +71,13 @@ public class Cliente extends Entity{
 		
 	public void agregarPedidoAlHistorial(Pedido pedido){
 		this.getPedidos().add(pedido);
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

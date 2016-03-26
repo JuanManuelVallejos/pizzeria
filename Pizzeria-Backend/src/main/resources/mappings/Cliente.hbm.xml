@@ -14,6 +14,7 @@
 		<property name="direccion" column="DIRECCION"/>
 		<property name="telefono" column="TELEFONO"/>
 		<property name="numeroDeCliente" column="NUMERO_DE_CLIENTE"/>
+		<property name="password" column="PASSWORD"/>
 		
 		<list name="pedidos" cascade="save-update" lazy="false">
 			<key column="CLIENTE_ID" />

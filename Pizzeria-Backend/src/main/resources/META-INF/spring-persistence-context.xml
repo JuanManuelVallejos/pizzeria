@@ -41,7 +41,6 @@ http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 		<property name="initialSize" value="20" />
 		<property name="maxActive" value="30" />
 		<property name="maxIdle" value="25" />
-
 	</bean>
 
 	<!-- Defines a global session factory that will be used by all modules. -->

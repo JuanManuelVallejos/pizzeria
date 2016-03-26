@@ -2,6 +2,7 @@ package rest;
 
 import java.util.List;
 
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -9,6 +10,12 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+
+import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
 import model.Pedido;
 import services.ClienteService;
@@ -45,11 +52,11 @@ public class ClienteRest {
 	}
 
 	@POST
-	@Path("/crear/{nombre}/{apellido}/{direccion}/{dni}/{nroDeCliente}")
+	@Path("/crear")
 	@Produces("application/json")
-	public Response crearCliente(@PathParam("nombre") String nombre, @PathParam("apellido") String apellido,@PathParam("direccion") String direccion,
-			@PathParam("dni") Integer dni, @PathParam("nroDeCliente") Integer nroDeCliente){
-		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente);
+	public Response crearCliente(@FormParam("nombre") String nombre, @FormParam("apellido") String apellido, @FormParam("direccion") String direccion,
+			@FormParam("dni") Integer dni, @FormParam("nroDeCliente") Integer nroDeCliente, @FormParam("password") String password){
+		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente, password);
 		getClienteService().save(cliente);
 		return Response.ok(cliente).build();
 	}
@@ -62,4 +69,26 @@ public class ClienteRest {
         return pedidos;
 	}
 	
+	@POST
+	@Path("/ingresar/")
+	@Produces("application/json")
+	public Response ingresar(@FormParam("usuario") Integer usuario, @FormParam("password") String password) {
+		Cliente cliente;
+		try {
+			cliente = getClienteService().obtenerClientePorUsuarioYPassword(usuario, password);
+			
+			ClassPathResource resource = new ClassPathResource("/META-INF/spring-persistence-context.xml");
+			XmlBeanFactory factory = new XmlBeanFactory(resource);
+	        PropertyPlaceholderConfigurer ppc = (PropertyPlaceholderConfigurer) factory
+	                .getBean("persistence.propertyConfigurer");
+	        ppc.postProcessBeanFactory(factory);
+	        
+	        SessionFactory sessionFactory = (SessionFactory) factory.getBean("persistence.sessionFactory");
+	        sessionFactory.getCurrentSession().save(cliente);
+	        
+		} catch (UsuarioOPasswordInvalido e) {
+			return Response.ok(-1).build();
+		}
+        return Response.ok(cliente).build();
+	}
 }

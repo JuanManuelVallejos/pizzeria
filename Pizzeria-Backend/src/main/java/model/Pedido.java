@@ -5,7 +5,7 @@ import java.util.ArrayList;
 @SuppressWarnings("serial")
 public class Pedido extends Entity {
 	
-	private ArrayList<ItemPedido> items = new ArrayList<ItemPedido>();
+	private ArrayList<ItemPedido> items;
 	private boolean realizado = false;
 	
 	public Pedido(){}
