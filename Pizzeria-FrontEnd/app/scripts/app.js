@@ -62,6 +62,11 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
+	  .when('/nuevocliente', {
+        templateUrl: 'views/nuevocliente.html',
+        controller: 'NuevoClienteCtrl',
+        controllerAs: 'nuevocliente'
+      })
       .otherwise({
         redirectTo: '/'
       });

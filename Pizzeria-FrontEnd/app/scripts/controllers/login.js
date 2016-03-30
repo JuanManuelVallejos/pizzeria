@@ -33,7 +33,7 @@ angular.module('pizzeriaFrontEndApp')
         	if(data == -1){
         		alerte("El numero de cliente o password son incorrectos")
         	}else{
-        		//redireccionar
+        		location = '#/pedido';
         	}     	
         });
      };

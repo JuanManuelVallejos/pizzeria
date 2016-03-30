@@ -52,11 +52,11 @@ public class ClienteRest {
 	}
 
 	@POST
-	@Path("/crear")
+	@Path("/crear/{nombre}/{apellido}/{direccion}/{dni}/{nroDeCliente}/{password}")
 	@Produces("application/json")
-	public Response crearCliente(@FormParam("nombre") String nombre, @FormParam("apellido") String apellido, @FormParam("direccion") String direccion,
-			@FormParam("dni") Integer dni, @FormParam("nroDeCliente") Integer nroDeCliente, @FormParam("password") String password){
-		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente, password);
+	public Response crearCliente(@PathParam("nombre") String nombre, @PathParam("apellido") String apellido,@PathParam("direccion") String direccion,
+			@PathParam("dni") Integer dni, @PathParam("nroDeCliente") Integer nroDeCliente, @PathParam("password") String password){
+		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente,password);
 		getClienteService().save(cliente);
 		return Response.ok(cliente).build();
 	}
