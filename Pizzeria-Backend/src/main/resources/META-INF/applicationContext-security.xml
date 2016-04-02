@@ -4,28 +4,14 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                     http://www.springframework.org/schema/security
-                    http://www.springframework.org/schema/security/spring-security-3.1.xsd">
-
-
-
-    <http use-expressions="true">
+                    http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
     
-        <intercept-url pattern="/**" access="permitAll" />
-        
-        <form-login
-         login-page='/login.html'
-         login-processing-url="/perform_login"
-         default-target-url="/main.html"
-         authentication-failure-url="/login.html?error=true" />
- 
-  		<logout logout-success-url="/login.html" />
-    </http>
-    
-    
+    <http auto-config='true'>
+    	<intercept-url pattern="/rest/productos/listar" access="ROLE_USER" />
+  	</http>
 
     <authentication-manager>
         <authentication-provider>
-    
             <user-service>
                 <user name="rod" password="koala" authorities="ROLE_USER" />
                 <user name="dianne" password="emu" authorities="teller, user" />

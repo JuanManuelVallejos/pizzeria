@@ -8,7 +8,5 @@
 	<import resource="spring-persistence-context.xml"/>
     <import resource="spring-services-context.xml"/>
     <import resource="applicationContext.xml"/> 
-    <import resource="securityApplicationContext.xml"/> 
-    
-       
+    <!--  <import resource="applicationContext-security.xml"/> -->
 </beans>

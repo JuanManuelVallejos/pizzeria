@@ -8,7 +8,6 @@
 <!--<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
 	http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"> -->
 
-
 <context-param>
 	<param-name>contextConfigLocation</param-name>
 	<param-value>
@@ -16,7 +15,7 @@
 		classpath*:/META-INF/spring-persistence-context.xml,
 		classpath*:/META-INF/spring-services-context.xml,
 		classpath*:/META-INF/applicationContext.xml,
-		classpath*:/META-INF/securityApplicationContext.xml
+		 classpath*:/META-INF/applicationContext-security.xml
 	</param-value>
 </context-param>
 
@@ -25,10 +24,11 @@
 	<param-value>development</param-value>
 </context-param>
 
+<!--  
 <context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
-</context-param>
+</context-param>-->
 
 <listener id="loggerAspect">
 	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -41,24 +41,19 @@
 	<load-on-startup>1</load-on-startup>
 </servlet>
 
-<servlet>
-		<servlet-name>dispatcher</servlet-name>
-		<servlet-class>
-			org.springframework.web.servlet.DispatcherServlet
-		</servlet-class>
-		<load-on-startup>1</load-on-startup>
-</servlet>
-
 <servlet-mapping>
 	<servlet-name>CXFServlet</servlet-name>
 	<url-pattern>/rest/*</url-pattern>
 </servlet-mapping>
 
-<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/</url-pattern>
-</servlet-mapping>
+<filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+</filter>
 
-
+<filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/rest/*</url-pattern>
+</filter-mapping>
 
 </web-app>
