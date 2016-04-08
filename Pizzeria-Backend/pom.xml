@@ -307,12 +307,6 @@
 	</properties>
 
 	<build>
-
-		<!-- <resources> <resource> <filtering>true</filtering> <directory>src/main/resources</directory> 
-			</resource> <resource> <filtering>true</filtering> <directory>src/main/java</directory> 
-			<includes> <include>**</include> </includes> <excludes> <exclude>**/*.java</exclude> 
-			</excludes> </resource> </resources> -->
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -323,9 +317,12 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		
 
 	</build>
+ 
 
+    
 	<profiles>
 		<profile>
 
@@ -414,6 +411,19 @@
 						<configuration>
 							<source>1.7</source>
 							<target>1.7</target>
+							<filters>
+		
+								<filter>
+									<filter-name>springSecurityFilterChain</filter-name>
+									<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+								</filter>
+    		
+    							<filter-mapping>  
+        							<filter-name>springSecurityFilterChain</filter-name>  
+        							<url-pattern>/*</url-pattern>  
+    							</filter-mapping> 
+    		
+							</filters>
 						</configuration>
 					</plugin>
 					<plugin>

@@ -13,6 +13,7 @@ public class Cliente extends Entity{
 	private Integer numeroDeCliente;
 	private String password;
 	private ArrayList<Pedido> pedidos;
+	private Rol rol;
 	
 	public Cliente(){}
 	
@@ -79,5 +80,13 @@ public class Cliente extends Entity{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Rol rol) {
+		this.rol = rol;
 	}
 }

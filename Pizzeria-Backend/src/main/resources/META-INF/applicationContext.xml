@@ -35,6 +35,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 			<ref bean="productosRest" />
 			<ref bean="promocionesRest" />
 			<ref bean="objetosCompraRest" />
+			<ref bean="rolRest"/>
 		</jaxrs:serviceBeans>
 		<jaxrs:extensionMappings>
 			<entry key="json" value="application/json" />
@@ -70,5 +71,8 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 	</bean>	
 	<bean id="objetosCompraRest" class="rest.ObjetoCompraRest">
 		<property name="objetoCompraService" ref="services.objetocompra" />
+	</bean>	
+	<bean id="rolRest" class="rest.RolRest">
+		<property name="rolService" ref="services.rol" />
 	</bean>	
 </beans>

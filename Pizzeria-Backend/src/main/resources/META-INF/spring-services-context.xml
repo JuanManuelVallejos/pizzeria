@@ -13,7 +13,8 @@
 		<property name="itemPedidoService" ref="services.itempedido" />
 		<property name="pedidoService" ref="services.pedido" />				
 		<property name="productoService" ref="services.producto" />
-		<property name="promocionService" ref="services.promocion" />		
+		<property name="promocionService" ref="services.promocion" />
+		<property name="rolService" ref="services.rol" />		
 	</bean>
 
 	<bean id="services.administrador" class="services.AdministradorService">
@@ -36,5 +37,8 @@
 	</bean>
 	<bean id="services.objetocompra" class="services.ObjetoCompraService">
 		<property name="repository" ref="persistence.objetocomprarepository" />
+	</bean>
+	<bean id="services.rol" class="services.RolService">
+		<property name="repository" ref="persistence.rolrepository" />
 	</bean>
 </beans>

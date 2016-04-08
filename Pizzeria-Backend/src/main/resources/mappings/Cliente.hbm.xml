@@ -16,6 +16,8 @@
 		<property name="numeroDeCliente" column="NUMERO_DE_CLIENTE"/>
 		<property name="password" column="PASSWORD"/>
 		
+		
+		
 		<list name="pedidos" cascade="save-update" lazy="false">
 			<key column="CLIENTE_ID" />
 			<list-index column="ID" />
