@@ -23,7 +23,7 @@ public class ClienteDAO extends HibernateGenericDAO<Cliente> implements GenericR
 		return (Cliente) criteria.uniqueResult();
 	}
 
-	public Cliente buscarPorNumeroDeCliente(Integer numeroDeCliente) {	
+	public Cliente buscarPorNumeroDeCliente(String numeroDeCliente) {	
 		Session session = this.getHibernateTemplate().getSessionFactory().openSession();
 		Criteria criteria = session.createCriteria(Cliente.class);
 		criteria.add(Restrictions.eq("numeroDeCliente", numeroDeCliente));

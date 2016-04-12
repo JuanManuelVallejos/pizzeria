@@ -12,7 +12,7 @@ public class ClienteService extends GenericService<Cliente> {
 		return ((ClienteDAO) this.getRepository()).buscarPorDni(dni);
 	}
 	
-	public Cliente buscarPorNumeroDeCliente(Integer numeroDeCliente) {
+	public Cliente buscarPorNumeroDeCliente(String numeroDeCliente) {
 		return ((ClienteDAO) this.getRepository()).buscarPorNumeroDeCliente(numeroDeCliente);
 	}
 
