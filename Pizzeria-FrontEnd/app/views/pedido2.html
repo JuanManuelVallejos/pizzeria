@@ -1,0 +1,266 @@
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+});
+</script>
+
+
+<style>
+/********************************ESTO ES PARA CARROUSEL*****************************************/
+	.img-responsive,
+	.thumbnail > img,
+	.thumbnail a > img,
+	.carousel-inner > .item > img,
+	.carousel-inner > .item > a > img {
+	  display: block;
+	  width: 100%;
+	  height: auto;
+	}
+
+	/* ------------------- Carousel Styling ------------------- */
+
+	.carousel-inner {
+		border-radius: 15px;
+	}
+
+	.carousel-caption {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		padding: 0 0 10px 25px;
+		color: #fff;
+		text-align: left;
+	}
+
+	.carousel-indicators {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		z-index: 15;
+		margin: 0;
+		padding: 0 25px 25px 0;
+		text-align: right;
+	}
+
+	.carousel-control.left,
+	.carousel-control.right {
+		background-image: none;
+	}
+
+
+	/* ------------------- Section Styling - Not needed for carousel styling ------------------- */
+
+	.section-white {
+		padding: 10px 0;
+	}
+
+
+	@media screen and (min-width: 768px) {
+
+		.section-white {
+			padding: 1.5em 0;
+		}
+
+	}
+
+	@media screen and (min-width: 992px) {
+
+		.container {
+			max-width: 930px;
+		}
+
+	}
+
+/******************** MENU QUE TIENE QUE SER NEGRO *************************************/
+
+/*  bhoechie tab */
+div.bhoechie-tab-container{
+  z-index: 10;
+  background-color: #000000;
+  border:1px solid #000;
+}
+div.bhoechie-tab-menu{
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  background-color: #000000;
+}
+div.bhoechie-tab-menu div.list-group{
+  margin-bottom: 0;
+  background-color: #000000;
+}
+div.bhoechie-tab-menu div.list-group>a{
+  margin-bottom: 0;
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #696969;
+}
+
+div.bhoechie-tab-menu div.list-group>a:first-child{
+  border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a:last-child{
+  border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a.active,
+div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+div.bhoechie-tab-menu div.list-group>a.active .fa{
+  background-color: #696969;
+  color: #000000;
+  border-color: #696969;
+}
+div.bhoechie-tab-menu div.list-group>a.active:after{
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+
+}
+
+div.bhoechie-tab-content{
+  background-color: #000000;
+
+}
+
+div.bhoechie-tab div.bhoechie-tab-content:not(.active){
+  display: none;
+}
+
+
+</style>
+
+<div class="row">
+
+	<div class="col-md-2">
+		<div class="container">
+			</br>
+			<img src="images/Logo.png" alt="Pizzeria">
+		</div>
+	</div>
+
+	<div class="col-md-10">
+
+
+		<section class="section-white">
+			<div class="container">
+
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="images/promo1.jpg" alt="...">
+							<div class="carousel-caption">
+							<h3>Con la compra de la pizza de la casa y una Coca de 1.5 lts, te llevas un faina</h3>
+							</div>
+						</div>
+						<div class="item">
+							<img src="images/promo2.jpg" alt="...">
+							<div class="carousel-caption">
+								<h3>Con la compra de dos pizzas de verduras tenes un descuento del %20 en la tercer pizza</h3>
+							</div>
+						</div>
+						
+						<div class="item">
+						<img src="images/promo3.jpg" alt="...">
+						<div class="carousel-caption">
+							<h3>Con al compra de una pizza de jamon y otra de cebolla te llevas una Coca de 2.15 lts</h3>
+						</div>
+						</div>
+
+						<div class="item">
+						<img src="images/promo4.jpg" alt="...">
+						<div class="carousel-caption">
+							<h3>Con la compra de una pizza mixta y una Coca de 3 lts te llevas media pizza muzzarella</h3>
+						</div>
+						</div>
+
+					</div>
+
+					<!-- Controls -->
+					<a class="left carousel-control" href="pedido/#carousel-example-generic" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+					</a>
+					<a class="right carousel-control" href="pedido/#carousel-example-generic" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</a>
+				</div>
+
+			</div>
+		</section>
+
+	</div>
+
+</div>
+</br></br>
+<div class="row">
+
+
+
+
+    <div class="col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+          <div class="list-group">
+            <a href="#" class="list-group-item active text-center">
+              <h4 class="glyphicon glyphicon-cutlery"></h4><br/>Hacer Pedido
+            </a>
+            <a href="#" class="list-group-item text-center">
+              <h4 class="glyphicon glyphicon-menu-hamburger"></h4><br/>Pedidos Realizados
+            </a>
+            <a href="#" class="list-group-item text-center">
+              <h4 class="glyphicon glyphicon-star"></h4><br/>Pedir Promoción
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+            <!-- flight section -->
+            <div class="bhoechie-tab-content active">
+                <center>
+                  <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                  <h3 style="margin-top: 0;color:#55518a">Pedidos a realizar</h3>
+                </center>
+            </div>
+            <!-- train section -->
+            <div class="bhoechie-tab-content">
+                <center>
+                  <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                  <h3 style="margin-top: 0;color:#55518a">Pedido realizados</h3>
+                </center>
+            </div>
+
+            <!-- hotel search -->
+            <div class="bhoechie-tab-content">
+                <center>
+                  <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                  <h3 style="margin-top: 0;color:#55518a">Pedir Promociones</h3>
+                </center>
+            </div>
+        </div>
+
+	</div>
+
+
+
+
+</div>

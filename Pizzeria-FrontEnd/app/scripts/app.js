@@ -38,7 +38,7 @@ angular
         controllerAs: 'administrador'
       })
       .when('/pedido', {
-        templateUrl: 'views/pedido.html',
+        templateUrl: 'views/pedido2.html',
         controller: 'PedidoCtrl',
         controllerAs: 'pedido'
       })
