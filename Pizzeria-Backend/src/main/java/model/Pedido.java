@@ -7,7 +7,18 @@ public class Pedido extends Entity {
 	
 	private ArrayList<ItemPedido> items;
 	private boolean realizado = false;
+	private Cliente cliente;
 	
+	
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	public Pedido(){}
 
 	public void agregarItemPedido(ItemPedido item){

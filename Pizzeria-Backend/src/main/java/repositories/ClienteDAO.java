@@ -1,5 +1,7 @@
 package repositories;
 
+import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -53,4 +55,13 @@ public class ClienteDAO extends HibernateGenericDAO<Cliente> implements GenericR
 		
 		return cliente;
 	}
+	
+	public List<Cliente> obtenerClientesConPedidosActivos(){
+		Session session = this.getHibernateTemplate().getSessionFactory().openSession();
+		Criteria criteria = session.createCriteria(Cliente.class);
+		criteria.createCriteria("Pedido").add(Restrictions.isNotNull("idCliente"));
+		criteria.createCriteria("Pedido").add(Restrictions.eq("realizado",true));
+		return  criteria.list();
+	}
+	
 }
