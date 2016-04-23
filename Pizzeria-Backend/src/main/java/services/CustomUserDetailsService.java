@@ -11,7 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import repositories.ClienteDAO;
 
@@ -25,6 +25,12 @@ public class CustomUserDetailsService extends GenericService<Cliente> implements
 	private static final long serialVersionUID = 4764677583367261801L;
 
 	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException, DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/*@Override
 	public UserDetails loadUserByUsername(String numeroDeCliente) throws UsernameNotFoundException, DataAccessException {
 		Cliente cliente = ((ClienteDAO) this.getRepository()).buscarPorNumeroDeCliente(numeroDeCliente);
 		
@@ -65,5 +71,5 @@ public class CustomUserDetailsService extends GenericService<Cliente> implements
         }
         return authorities;
     }
-	
+	*/
 }

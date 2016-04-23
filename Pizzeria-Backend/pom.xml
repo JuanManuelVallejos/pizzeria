@@ -100,11 +100,11 @@
   			<version>${spring.version}</version>		  			
   		</dependency>
   				  		
-		<dependency>
+		<!-- <dependency>
    			<groupId>org.springframework.security</groupId>
    			<artifactId>spring-security-core</artifactId>
    			<version>4.0.1.RELEASE</version>
-		</dependency>
+		</dependency> -->
 		
 		<dependency>
 			<groupId>cglib</groupId>
