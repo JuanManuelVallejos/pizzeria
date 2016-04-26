@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+
 angular
   .module('pizzeriaFrontEndApp', [
     'ngAnimate',
@@ -72,6 +73,9 @@ angular
       });
   }).controller('AppCtrl', function($scope, $http) {
   
-      
-
+  }).directive('templateUrl', function ($http){
+    return {
+      restrict: 'E',
+      templateUrl: '/views/hacerpedido.html',
+    };
   });
