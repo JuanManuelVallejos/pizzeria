@@ -36,8 +36,9 @@ public class ProductoRest {
 	@POST
 	@Path("/crear")
 	@Produces("application/json")
-	public Response crearProducto(@FormParam("nombre") String nombre, @FormParam("precio") Integer precio){
-		Producto producto = new Producto(nombre, precio);
+	public Response crearProducto(@FormParam("nombre") String nombre, @FormParam("precio") Integer precio,
+			@FormParam("imagen") byte[] imagen){
+		Producto producto = new Producto(nombre, precio, imagen);
 		getProductoService().save(producto);
 		return Response.ok(producto).build();
 	}

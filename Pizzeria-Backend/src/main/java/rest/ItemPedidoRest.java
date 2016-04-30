@@ -34,7 +34,7 @@ public class ItemPedidoRest {
         return items;
 	}
 	
-	@POST
+	/*@POST
 	@Path("/crear")
 	@Produces("application/json")
 	public Response crearItemPedido(@FormParam("nombreProducto") String nombreProducto, @FormParam("precioProducto") Integer precioProducto,
@@ -44,6 +44,6 @@ public class ItemPedidoRest {
 
 		getItemPedidoService().save(item);
 		return Response.ok(item).build();
-	}
+	}*/
 
 }

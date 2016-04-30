@@ -9,8 +9,8 @@ public class Promocion extends ObjetoCompra{
 	
 	public Promocion(){}
 	
-	public Promocion(String nombre, Integer precio){
-		super(nombre, precio);
+	public Promocion(String nombre, Integer precio, byte[] imagen){
+		super(nombre, precio, imagen);
 	}
 	
 	public ArrayList<Producto> getProductos() {
@@ -20,8 +20,8 @@ public class Promocion extends ObjetoCompra{
 		this.productos = productos;
 	}
 	
-	public Promocion(String nombre, Integer precio,ArrayList<Producto> productos){
-		super(nombre, precio);
+	public Promocion(String nombre, Integer precio,ArrayList<Producto> productos, byte[] imagen){
+		super(nombre, precio, imagen);
 		this.setProductos(productos);
 	}
 	
