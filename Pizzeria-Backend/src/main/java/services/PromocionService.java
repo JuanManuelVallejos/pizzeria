@@ -15,4 +15,5 @@ public class PromocionService extends GenericService<Promocion> {
 
 		return promocionDTO;
 	}
+	
 }

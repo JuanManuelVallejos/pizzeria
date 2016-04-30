@@ -58,4 +58,6 @@ public class Pedido extends Entity {
 		this.setRealizado(true);
 		cliente.agregarPedidoAlHistorial(this);
 	}
+	
+
 }

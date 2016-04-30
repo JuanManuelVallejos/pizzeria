@@ -15,4 +15,11 @@ public class ProductoService extends GenericService<Producto> {
 
 		return productoDTO;
 	}
+	
+	public void agregarProducto(String nombre, int precio){
+		Producto producto = new Producto();
+		producto.setNombre(nombre);
+		producto.setPrecio(precio);
+		this.getRepository().save(producto);
+	}
 }
