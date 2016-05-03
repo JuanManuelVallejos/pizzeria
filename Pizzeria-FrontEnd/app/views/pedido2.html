@@ -1,15 +1,15 @@
 
 <script type="text/javascript">
-$(document).ready(function() {
-    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-        e.preventDefault();
-        $(this).siblings('a.active').removeClass("active");
-        $(this).addClass("active");
-        var index = $(this).index();
-        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-    });
-});
+	$(document).ready(function() {
+	    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+	        e.preventDefault();
+	        $(this).siblings('a.active').removeClass("active");
+	        $(this).addClass("active");
+	        var index = $(this).index();
+	        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+	        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+	    });
+	});
 </script>
 
 <style>
@@ -82,63 +82,38 @@ $(document).ready(function() {
 
 	}
 
-/******************** MENU QUE TIENE QUE SER NEGRO *************************************/
 
-/*  bhoechie tab */
-div.bhoechie-tab-container{
-  z-index: 10;
-  background-color: #000000;
-  border:1px solid #000;
-}
-div.bhoechie-tab-menu{
-  padding-right: 0;
-  padding-left: 0;
-  padding-bottom: 0;
-  background-color: #000000;
-}
-div.bhoechie-tab-menu div.list-group{
-  margin-bottom: 0;
-  background-color: #000000;
-}
-div.bhoechie-tab-menu div.list-group>a{
-  margin-bottom: 0;
-  background-color: #000000;
-  color: #ffffff;
-  border-color: #696969;
-}
+	/* Tabs panel */
+	.tabbable-panel {
+	  background-color: #000000;
+	}
 
-div.bhoechie-tab-menu div.list-group>a:first-child{
-  border-top-right-radius: 0;
-  -moz-border-top-right-radius: 0;
-}
-div.bhoechie-tab-menu div.list-group>a:last-child{
-  border-bottom-right-radius: 0;
-  -moz-border-bottom-right-radius: 0;
-}
-div.bhoechie-tab-menu div.list-group>a.active,
-div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
-div.bhoechie-tab-menu div.list-group>a.active .fa{
-  background-color: #696969;
-  color: #000000;
-  border-color: #696969;
-}
-div.bhoechie-tab-menu div.list-group>a.active:after{
-  content: '';
-  position: absolute;
-  left: 100%;
-  top: 50%;
+	.tabbable-line > .nav-tabs > li > a {
+	  border: 0;
+	  color: #737373;
+	}
 
-}
+	.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+	  border: 0;
+	  background-color: #000000;
+	  color: #333333;
+	}
 
-div.bhoechie-tab-content{
-  background-color: #000000;
+	.tabbable-line > .nav-tabs > li.active {
+	  border-bottom: 4px solid #f3565d;
+	  position: relative;
+	  background-color: #000000;
+	}
+	.tabbable-line > .nav-tabs > li.active > a {
+	  border: 0;
+	  color: #333333;
+	  background-color: #000000;
+	}
 
-}
-
-div.bhoechie-tab div.bhoechie-tab-content:not(.active){
-  display: none;
-}
-
+	.tabbable-line > .tab-content {
+	  border-top: 1px solid #696969;
+	  padding: 15px 0;
+	}
 
 </style>
 
@@ -214,48 +189,44 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 </div>
 </br></br>
 <div class="row">
-    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab-container" style="height: 380px; overflow: scroll;">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
-          <div class="list-group">
-            <a href="#" class="list-group-item active text-center">
-              <h4 class="glyphicon glyphicon-cutlery"></h4><br/>Hacer Pedido
-            </a>
-            <a href="#" class="list-group-item text-center">
-              <h4 class="glyphicon glyphicon-menu-hamburger"></h4><br/>Pedidos Realizados
-            </a>
-            <a href="#" class="list-group-item text-center">
-              <h4 class="glyphicon glyphicon-star"></h4><br/>Pedir Promoción
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bhoechie-tab">
-            <!-- flight section-->
-            <div class="bhoechie-tab-content active">
-	         	<div ng-controller="pizzeriaFrontEndApp">
-					<!-- con esto cargamos la directiva dir-template -->
-					<template-url></template-url>
-				</div>
-            </div>
-            <!-- train section -->
-            <div class="bhoechie-tab-content">
-                <center>
-                  <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                  <h3 style="margin-top: 0;color:#55518a">Pedido realizados</h3>
-                </center>
-            </div>
+    
+    <div class="col-md-9">
 
-            <!-- hotel search -->
-            <div class="bhoechie-tab-content">
-                <center>
-                  <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                  <h3 style="margin-top: 0;color:#55518a">Pedir Promociones</h3>
-                </center>
-            </div>
-        </div>
+		<div class="tabbable-panel">
+			<div class="tabbable-line">
+				<ul class="nav nav-tabs ">
+					<li class="active">
+						<a href="pedido/#tab_default_1" data-toggle="tab">
+							<span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Hacer Pedido  
+						</a>
+					</li>
+					<li>
+						<a href="pedido/#tab_default_2" data-toggle="tab">
+						<span class="glyphicon glyphicon-check" aria-hidden="true"></span> Pedidos Realizados </a>
+					</li>
+					<li>
+						<a href="pedido/#tab_default_3" data-toggle="tab">
+						<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Pedir Promoción </a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="tab_default_1">
+						<template-url></template-url>
+					</div>
+					<div class="tab-pane" id="tab_default_2">
+						Pedidos Realizados
+					</div>
+					<div class="tab-pane" id="tab_default_3">
+						Pedir promocion
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
-	<div class="col-md-3">
-        <center>
+
+	<div class="col-md-3" style="background-image: url(../images/cuenta.jpg); height: %100; width: %100;">
+
             <table class="table">
                 <thead>
                     <tr class="success">
@@ -288,8 +259,6 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
                 </tbody>
             </table>
             <button type="button" class="btn btn-success">Realizar pedido</button>
-        </center>
-        <br>
-    </div>
 
+	</div>
 </div>
