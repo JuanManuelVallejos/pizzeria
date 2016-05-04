@@ -201,23 +201,27 @@
 						</a>
 					</li>
 					<li>
-						<a href="pedido/#tab_default_2" data-toggle="tab">
-						<span class="glyphicon glyphicon-check" aria-hidden="true"></span> Pedidos Realizados </a>
-					</li>
-					<li>
 						<a href="pedido/#tab_default_3" data-toggle="tab">
 						<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Pedir Promoción </a>
 					</li>
+					<li>
+						<a href="pedido/#tab_default_2" data-toggle="tab">
+						<span class="glyphicon glyphicon-check" aria-hidden="true"></span> Pedidos Realizados </a>
+					</li>
+					
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active" id="tab_default_1">
-						<template-url></template-url>
-					</div>
-					<div class="tab-pane" id="tab_default_2">
-						Pedidos Realizados
+						Hacer pedido
+						<dir-nuevopedido></dir-nuevopedido>
 					</div>
 					<div class="tab-pane" id="tab_default_3">
 						Pedir promocion
+						<dir-pedirpromocion></dir-pedirpromocion>
+					</div>
+					<div class="tab-pane" id="tab_default_2">
+						Pedidos Realizados
+						<dir-pedidosrealizados></dir-pedidosrealizados>
 					</div>
 				</div>
 			</div>
@@ -225,9 +229,19 @@
 
 	</div>
 
-	<div class="col-md-3" style="background-image: url(../images/cuenta.jpg); height: %100; width: %100;">
-
-            <table class="table">
+	<div class="col-md-3" style="background-image: url(../images/cuenta.jpg); height: %100; width: %100; left:-15px">
+			<center> <h2>Su pedido</h2></center>
+			<h3>2 Muzzarella.......................................$160</h3>
+			<h3>1 Fainá...............................................$1160</h3>
+			<h3>4 Docenas Empanadas de Carne.......$1160</h3>
+			<h3>1 Coca Cola Baby................................$500</h3>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<h3>TOTAL..............................................$5000</h3>
+            <!--<table class="table">
                 <thead>
                     <tr class="success">
                         <th>Producto</th>
@@ -257,7 +271,7 @@
                         <td class="success">370</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
             <button type="button" class="btn btn-success">Realizar pedido</button>
 
 	</div>

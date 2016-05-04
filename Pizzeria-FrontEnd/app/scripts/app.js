@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 
-angular
+var app = angular
   .module('pizzeriaFrontEndApp', [
     'ngAnimate',
     'ngCookies',
@@ -17,8 +17,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ])
-  .config(function ($routeProvider) {
+  ]);
+  app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -71,11 +71,24 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).controller('AppCtrl', function($scope, $http) {
+  });
+
+
+  app.controller('AppCtrl', function($scope, $http) {
   
-  }).directive('templateUrl', function ($http){
+  }).directive('dirNuevopedido', function ($http){
     return {
       restrict: 'E',
       templateUrl: '/views/hacerpedido.html',
+    };
+  }).directive('dirPedidosrealizados', function ($http){
+    return {
+      restrict: 'E',
+      templateUrl: '/views/pedidosRealizados.html',
+    };
+  }).directive('dirPedirpromocion', function ($http){
+    return {
+      restrict: 'E',
+      templateUrl: '/views/pedirPromocion.html',
     };
   });
