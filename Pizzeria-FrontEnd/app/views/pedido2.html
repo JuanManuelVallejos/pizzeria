@@ -118,76 +118,63 @@
 </style>
 
 <div class="row">
-
-	<div class="col-md-3">
-		
-			</br>
-			<img src="images/Logo.png" alt="Pizzeria">
-		
+	<div class="col-md-3 col-xs-3">	
+		<br>
+		<img src="images/Logo.png" alt="Pizzeria">
 	</div>
 
-	<div class="col-md-9">
+	<div id="carousel-example-generic" class="carousel slide col-md-9 col-xs-9" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+		</ol>
 
-
-		<section class="section-white">
-			<div class="container">
-
-				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-					</ol>
-
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner">
-						<div class="item active">
-							<img src="images/promo1.jpg" alt="...">
-							<div class="carousel-caption">
-							<h3>Con la compra de la pizza de la casa y una Coca de 1.5 lts, te llevas un faina</h3>
-							</div>
-						</div>
-						<div class="item">
-							<img src="images/promo2.jpg" alt="...">
-							<div class="carousel-caption">
-								<h3>Con la compra de dos pizzas de verduras tenes un descuento del %20 en la tercer pizza</h3>
-							</div>
-						</div>
-						
-						<div class="item">
-						<img src="images/promo3.jpg" alt="...">
-						<div class="carousel-caption">
-							<h3>Con al compra de una pizza de jamon y otra de cebolla te llevas una Coca de 2.15 lts</h3>
-						</div>
-						</div>
-
-						<div class="item">
-						<img src="images/promo4.jpg" alt="...">
-						<div class="carousel-caption">
-							<h3>Con la compra de una pizza mixta y una Coca de 3 lts te llevas media pizza muzzarella</h3>
-						</div>
-						</div>
-
-					</div>
-
-					<!-- Controls -->
-					<a class="left carousel-control" href="pedido/#carousel-example-generic" data-slide="prev">
-						<span class="glyphicon glyphicon-chevron-left"></span>
-					</a>
-					<a class="right carousel-control" href="pedido/#carousel-example-generic" data-slide="next">
-						<span class="glyphicon glyphicon-chevron-right"></span>
-					</a>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="images/promo1.jpg" alt="...">
+				<div class="carousel-caption">
+					<h3>Con la compra de la pizza de la casa y una Coca de 1.5 lts, te llevas un faina</h3>
 				</div>
-
 			</div>
-		</section>
+			<div class="item">
+				<img src="images/promo2.jpg" alt="...">
+				<div class="carousel-caption">
+					<h3>Con la compra de dos pizzas de verduras tenes un descuento del %20 en la tercer pizza</h3>
+				</div>
+			</div>
+			
+			<div class="item">
+				<img src="images/promo3.jpg" alt="...">
+				<div class="carousel-caption">
+					<h3>Con al compra de una pizza de jamon y otra de cebolla te llevas una Coca de 2.15 lts</h3>
+				</div>
+			</div>
 
+			<div class="item">
+				<img src="images/promo4.jpg" alt="...">
+				<div class="carousel-caption">
+					<h3>Con la compra de una pizza mixta y una Coca de 3 lts te llevas media pizza muzzarella</h3>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="pedido/#carousel-example-generic" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="pedido/#carousel-example-generic" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
 	</div>
+
 
 </div>
-</br></br>
+<br>
 <div class="row">
     
     <div class="col-md-9">
@@ -210,7 +197,7 @@
 					</li>
 					
 				</ul>
-				<div class="tab-content">
+				<div class="tab-content" style="overflow: scroll;">
 					<div class="tab-pane active" id="tab_default_1">
 						Hacer pedido
 						<dir-nuevopedido></dir-nuevopedido>
@@ -229,50 +216,50 @@
 
 	</div>
 
-	<div class="col-md-3" style="background-image: url(../images/cuenta.jpg); height: %100; width: %100; left:-15px">
-			<center> <h2>Su pedido</h2></center>
-			<h3>2 Muzzarella.......................................$160</h3>
-			<h3>1 Fainá...............................................$1160</h3>
-			<h3>4 Docenas Empanadas de Carne.......$1160</h3>
-			<h3>1 Coca Cola Baby................................$500</h3>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<h3>TOTAL..............................................$5000</h3>
-            <!--<table class="table">
-                <thead>
-                    <tr class="success">
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="active">
-                        <td>Muzzarella</td>
-                        <td>2</td>
-                        <td>200</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Especial</td>
-                        <td>1</td>
-                        <td>120</td>
-                    </tr>
-                    <tr class="active">
-                        <td>Coca cola 3L</td>
-                        <td>1</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td class="success">Total</td>
-                        <td class="success">370</td>
-                    </tr>
-                </tbody>
-            </table> -->
-            <button type="button" class="btn btn-success">Realizar pedido</button>
+	<div class="col-md-3" style="background-image: url(../images/cuenta.jpg); left:-15px">
+		<center> <h2>Su pedido</h2></center>
+		<h3>2 Muzzarella..............$160</h3>
+		<h3>1 Fainá....................$1160</h3>
+		<h3>4 Docenas Empanadas de Carne..........$1160</h3>
+		<h3>1 Coca Cola Baby.............$500</h3>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<h3>TOTAL.............$5000</h3>
+        <!--<table class="table">
+            <thead>
+                <tr class="success">
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active">
+                    <td>Muzzarella</td>
+                    <td>2</td>
+                    <td>200</td>
+                </tr>
+                <tr class="active">
+                    <td>Especial</td>
+                    <td>1</td>
+                    <td>120</td>
+                </tr>
+                <tr class="active">
+                    <td>Coca cola 3L</td>
+                    <td>1</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="success">Total</td>
+                    <td class="success">370</td>
+                </tr>
+            </tbody>
+        </table> -->
+        <button type="button" class="btn btn-success">Realizar pedido</button>
 
 	</div>
 </div>
