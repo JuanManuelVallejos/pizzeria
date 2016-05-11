@@ -8,10 +8,14 @@
  * Controller of the pizzeriaFrontEndApp
  */
 angular.module('pizzeriaFrontEndApp')
-  .controller('AdministradorCtrl', function () {
+  .controller('AdministradorCtrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+
+    $scope.changeTab = function(tab) {
+    		$scope.view_tab = tab;
+	};
   });

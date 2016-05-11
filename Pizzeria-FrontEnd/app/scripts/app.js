@@ -91,4 +91,9 @@ var app = angular
       restrict: 'E',
       templateUrl: '/views/pedirPromocion.html',
     };
+  }).directive('dirPendientesadmin', function ($http){
+    return {
+      restrict: 'E',
+      templateUrl: '/views/pedidosPendientesAdmin.html',
+    };
   });

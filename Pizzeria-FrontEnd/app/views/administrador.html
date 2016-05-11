@@ -1,1 +1,22 @@
-<p>This is the administrador view.</p>
+
+<div class="col">
+
+			<div class="col">
+            <h3 style="color:white">Administrador</h3>
+            </div>
+            
+            <div class="tabbable">
+                <ul class="nav nav-pills nav-stacked col-md-3" role="tablist">
+                    <li class="active " ng-class="{'active': view_tab == 'tab1'}"><a  ng-click="changeTab('tab1')" href="" data-toggle="tab" class="btn btn-danger btn-lg">Pedidos pendientes</a></li>
+                    <li ng-class="{'active': view_tab == 'tab2'}"><a ng-click="changeTab('tab2')" href="" data-toggle="tab" class="btn btn-danger btn-lg">Resumen semanal</a></li>
+                    <li ng-class="{'active': view_tab == 'tab3'}"><a ng-click="changeTab('tab3')" href="" data-toggle="tab" class="btn btn-danger btn-lg">Estadísticas</a></li>
+                </ul>
+                <div class="tab-content col-md-9">
+                    <div class="tab-pane active" ng-show="view_tab == 'tab1'"><dir-pendientesadmin></dir-pendientesadmin></div>
+                    <div class="tab-pane active" ng-show="view_tab == 'tab2'"><dir-nuevopedido></dir-nuevopedido></div>
+                    <div class="tab-pane active" ng-show="view_tab == 'tab3'"><dir-pedidosrealizados></dir-pedidosrealizados></div>
+                </div>
+            </div>
+
+
+</div>
