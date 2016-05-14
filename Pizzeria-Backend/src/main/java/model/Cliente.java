@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class Cliente extends Entity{
@@ -12,7 +13,7 @@ public class Cliente extends Entity{
 	private Integer telefono;
 	private Integer numeroDeCliente;
 	private String password;
-	private ArrayList<Pedido> pedidos;
+	private List<Pedido> pedidos = new ArrayList<Pedido>();
 	private Rol rol;
 	
 	public Cliente(){}
@@ -44,10 +45,10 @@ public class Cliente extends Entity{
 	public void setNumeroDeCliente(Integer numeroDeCliente) {
 		this.numeroDeCliente = numeroDeCliente;
 	}
-	public ArrayList<Pedido> getPedidos() {
+	public List<Pedido> getPedidos() {
 		return pedidos;
 	}
-	public void setPedidos(ArrayList<Pedido> pedidos) {
+	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
 	public String getDireccion() {

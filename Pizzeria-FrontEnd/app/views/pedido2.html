@@ -116,35 +116,58 @@
 	}
 
 
-::-webkit-scrollbar {
+#scroll::-webkit-scrollbar {
       width: 15px;
 } /* this targets the default scrollbar (compulsory) */
-::-webkit-scrollbar-track {
-      background-color: #000000;
-} /* the new scrollbar will have a flat appearance with the set background color */
- 
-::-webkit-scrollbar-thumb {
-      background-color: rgba(82,82,82,82); 
-} /* this will style the thumb, ignoring the track */
- 
-::-webkit-scrollbar-button {
-      background-color: #808080;
-} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
- 
-::-webkit-scrollbar-corner {
-      background-color: black;
-} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
 
+/*
+#scroll::-webkit-scrollbar-track {
+      background-color: #000000;
+}  the new scrollbar will have a flat appearance with the set background color */
+
+ /* 
+#scroll::-webkit-scrollbar-thumb {
+      background-color: rgba(82,82,82,82);
+} this will style the thumb, ignoring the track */
+ 
+/*#scroll::-webkit-scrollbar-button {
+      background-color: #808080;
+} optionally, you can style the top and the bottom buttons (left and right for horizontal bars) 
+ 
+*/
+#scroll::-webkit-scrollbar-corner {
+      background-color: black;
+} /*if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+/* PUEDEN POBARRRRRRRRRRRRRR
+#scroll::-webkit-scrollbar-track{
+	border:1px gray solid;
+	border-radius:10px;
+	-webkit-box-shadow:0 0 6px gray inset;
+} */
+
+#scroll::-webkit-scrollbar-thumb{
+	background-color: #f3565d; /* PUEDEN POBARRRRRRRRRRRRRR #B03C3F;*/
+	border-radius:10px;
+}
+#scroll::-webkit-scrollbar-thumb:hover{
+	background-color:#BF4649;
+	border:1px solid #333333;
+}
+#scroll::-webkit-scrollbar-thumb:active{
+	background-color:#A6393D;
+	border:1px solid #333333;
+} 
 
 </style>
 
 <div class="row">
-	<div class="col-md-3 col-xs-3">	
+	<div class="col-md-3">	
 		<br>
 		<img src="images/Logo.png" alt="Pizzeria">
 	</div>
 
-	<div id="carousel-example-generic" class="carousel slide col-md-9 col-xs-9" data-ride="carousel">
+	<div id="carousel-example-generic" class="carousel slide col-md-9" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -218,7 +241,7 @@
 					</li>
 					
 				</ul>
-				<div class="tab-content" style="overflow: scroll;">
+				<div class="tab-content" style="overflow: scroll;" id="scroll">
 					<div class="tab-pane active" id="tab_default_1">
 						Hacer pedido
 						<dir-nuevopedido></dir-nuevopedido>

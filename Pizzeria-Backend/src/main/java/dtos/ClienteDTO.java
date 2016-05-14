@@ -1,6 +1,6 @@
 package dtos;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import model.Pedido;
 
@@ -14,7 +14,7 @@ public class ClienteDTO {
 	private Integer telefono;
 	private Integer numeroDeCliente;
 	private String password;
-	private ArrayList<Pedido> pedidos;
+	private List<Pedido> pedidos;
 	private int iDRol;
 	
 	
@@ -66,10 +66,10 @@ public class ClienteDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public ArrayList<Pedido> getPedidos() {
+	public List<Pedido> getPedidos() {
 		return pedidos;
 	}
-	public void setPedidos(ArrayList<Pedido> pedidos) {
+	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
 	public int getiDRol() {
