@@ -1,6 +1,7 @@
 package services;
 
 import dtos.ClienteDTO;
+import exceptions.UsuarioConDNIExistenteException;
 import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
 import repositories.ClienteDAO;
@@ -22,6 +23,18 @@ public class ClienteService extends GenericService<Cliente> {
 		clientedto.setPedidos(cliente.getPedidos());
 
 		return clientedto;
+	}
+	
+	public void verificarDNIExistente(Integer dni) throws UsuarioConDNIExistenteException{
+		if(this.buscarPorDni(dni)!= null){
+			throw new UsuarioConDNIExistenteException();
+		}
+	}
+	
+	public Cliente darDeAltaNuevoCliente(String nombre,String apellido,String direccion,Integer dni,Integer nroDeCliente,String password) throws UsuarioConDNIExistenteException{
+		this.verificarDNIExistente(dni);
+		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente,password);
+		return cliente;
 	}
 	
 	public Cliente buscarPorDni(Integer dni) {

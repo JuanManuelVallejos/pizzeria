@@ -15,6 +15,7 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 
+import exceptions.UsuarioConDNIExistenteException;
 import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
 import model.Pedido;
@@ -55,9 +56,10 @@ public class ClienteRest {
 	@Path("/crear/{nombre}/{apellido}/{direccion}/{dni}/{nroDeCliente}/{password}")
 	@Produces("application/json")
 	public Response crearCliente(@PathParam("nombre") String nombre, @PathParam("apellido") String apellido,@PathParam("direccion") String direccion,
-			@PathParam("dni") Integer dni, @PathParam("nroDeCliente") Integer nroDeCliente, @PathParam("password") String password){
-		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente,password);
-		getClienteService().save(cliente);
+			@PathParam("dni") Integer dni, @PathParam("nroDeCliente") Integer nroDeCliente, @PathParam("password") String password) throws UsuarioConDNIExistenteException{
+		
+		Cliente cliente = this.getClienteService().darDeAltaNuevoCliente(nombre, apellido,direccion, dni, nroDeCliente,password);
+		this.getClienteService().save(cliente);
 		return Response.ok(cliente).build();
 	}
 
