@@ -31,9 +31,9 @@ public class ClienteService extends GenericService<Cliente> {
 		}
 	}
 	
-	public Cliente darDeAltaNuevoCliente(String nombre,String apellido,String direccion,Integer dni,Integer nroDeCliente,String password) throws UsuarioConDNIExistenteException{
+	public Cliente darDeAltaNuevoCliente(String nombre,String apellido,String direccion,Integer dni,Integer nroDeCliente,String password, Integer nroDeTelefono) throws UsuarioConDNIExistenteException{
 		this.verificarDNIExistente(dni);
-		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente,password);
+		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente,password,nroDeTelefono);
 		return cliente;
 	}
 	

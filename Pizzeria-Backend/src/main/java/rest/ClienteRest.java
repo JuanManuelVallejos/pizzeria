@@ -53,12 +53,12 @@ public class ClienteRest {
 	}
 
 	@POST
-	@Path("/crear/{nombre}/{apellido}/{direccion}/{dni}/{nroDeCliente}/{password}")
+	@Path("/crear/{nombre}/{apellido}/{direccion}/{dni}/{nroDeCliente}/{password}/{nroDeTelefono}")
 	@Produces("application/json")
 	public Response crearCliente(@PathParam("nombre") String nombre, @PathParam("apellido") String apellido,@PathParam("direccion") String direccion,
-			@PathParam("dni") Integer dni, @PathParam("nroDeCliente") Integer nroDeCliente, @PathParam("password") String password) throws UsuarioConDNIExistenteException{
+			@PathParam("dni") Integer dni, @PathParam("nroDeCliente") Integer nroDeCliente, @PathParam("password") String password, @PathParam("nroDeTelefono") Integer nroDeTelefono) throws UsuarioConDNIExistenteException{
 		
-		Cliente cliente = this.getClienteService().darDeAltaNuevoCliente(nombre, apellido,direccion, dni, nroDeCliente,password);
+		Cliente cliente = this.getClienteService().darDeAltaNuevoCliente(nombre, apellido,direccion, dni, nroDeCliente,password, nroDeTelefono);
 		this.getClienteService().save(cliente);
 		return Response.ok(cliente).build();
 	}

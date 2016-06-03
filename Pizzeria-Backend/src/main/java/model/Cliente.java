@@ -18,13 +18,14 @@ public class Cliente extends Entity{
 	
 	public Cliente(){}
 	
-	public Cliente(String nombre, String apellido, String direccion, Integer dni, Integer nroDeCliente, String password){
+	public Cliente(String nombre, String apellido, String direccion, Integer dni, Integer nroDeCliente, String password, Integer nroDeTelefono){
 		this.setNombre(nombre);
 		this.setApellido(apellido);
 		this.setDireccion(direccion);
 		this.setDni(dni);
 		this.setNumeroDeCliente(nroDeCliente);
 		this.setPassword(password);
+		this.setTelefono(nroDeTelefono);
 	}
 	
 	public String getNombre() {
