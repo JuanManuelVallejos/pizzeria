@@ -5,24 +5,15 @@ public class ObjetoCompra extends Entity {
 
 	private String nombre;
 	private Integer precio;
-	private byte[] imagen;
+	private String path;
 	
 	public ObjetoCompra(){
 		
 	}
 	
-	public ObjetoCompra(String nombre, Integer precio, byte[] imagen){
+	public ObjetoCompra(String nombre, Integer precio){
 		this.setNombre(nombre);
 		this.setPrecio(precio);
-		this.setImagen(imagen);
-	}
-	
-	public byte[] getImagen() {
-		return imagen;
-	}
-
-	public void setImagen(byte[] imagen) {
-		this.imagen = imagen;
 	}
 	
 	public Integer getPrecio() {
@@ -36,5 +27,13 @@ public class ObjetoCompra extends Entity {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 }

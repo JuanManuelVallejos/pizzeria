@@ -1,5 +1,6 @@
 package rest;
 
+import java.io.File;
 import java.util.List;
 
 import javax.ws.rs.FormParam;
@@ -36,11 +37,16 @@ public class ProductoRest {
 	@POST
 	@Path("/crear")
 	@Produces("application/json")
-	public Response crearProducto(@FormParam("nombre") String nombre, @FormParam("precio") Integer precio,
-			@FormParam("imagen") byte[] imagen){
-		Producto producto = new Producto(nombre, precio, imagen);
+	public Response crearProducto(@FormParam("nombre") String nombre, @FormParam("precio") Integer precio){
+		Producto producto = new Producto(nombre, precio);
 		getProductoService().save(producto);
 		return Response.ok(producto).build();
 	}
 
+	@GET
+	@Path("/imagen")
+	@Produces("application/html")
+	public Response getImagen(){
+		return Response.ok("<img src='../images/cat1.jpg' />").build();
+	}
 }

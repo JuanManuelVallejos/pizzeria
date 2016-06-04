@@ -10,6 +10,6 @@
 		<discriminator type="string" column="TIPO"/>
 		<property name="nombre" column="NOMBRE"/>
 		<property name="precio" column="PRECIO"/>
-		<property name="imagen" type="binary" column="IMAGEN" />		
+		<property name="path" type="string" column="PATH" />		
 	</class>
 </hibernate-mapping>
