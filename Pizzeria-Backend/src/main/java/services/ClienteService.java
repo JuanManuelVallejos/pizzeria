@@ -1,10 +1,13 @@
 package services;
 
 import dtos.ClienteDTO;
+import exceptions.NombreUsuarioExistenteException;
 import exceptions.UsuarioConDNIExistenteException;
 import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
 import repositories.ClienteDAO;
+import org.apache.commons.codec.digest.DigestUtils;
+
 
 public class ClienteService extends GenericService<Cliente> {
 
@@ -31,14 +34,30 @@ public class ClienteService extends GenericService<Cliente> {
 		}
 	}
 	
-	public Cliente darDeAltaNuevoCliente(String nombre,String apellido,String direccion,Integer dni,Integer nroDeCliente,String password, Integer nroDeTelefono) throws UsuarioConDNIExistenteException{
+	public void verificarNombreUsuarioExistente(String numeroDeCliente) throws NombreUsuarioExistenteException{
+		if(this.buscarPorNombreUsuario(numeroDeCliente)!= null){
+			throw new NombreUsuarioExistenteException();
+		}
+	}
+	
+	public Cliente darDeAltaNuevoCliente(String nombre,String apellido,String direccion,Integer dni,Integer nroDeCliente,String password, Integer nroDeTelefono) throws UsuarioConDNIExistenteException, NombreUsuarioExistenteException{
 		this.verificarDNIExistente(dni);
-		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente,password,nroDeTelefono);
+
+		String encryptPassword = this.encriptarPassword(password);
+		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente,encryptPassword,nroDeTelefono);
 		return cliente;
+	}
+	
+	public String encriptarPassword(String password){
+		return DigestUtils.md5Hex(password);
 	}
 	
 	public Cliente buscarPorDni(Integer dni) {
 		return ((ClienteDAO) this.getRepository()).buscarPorDni(dni);
+	}
+	
+	public Cliente buscarPorNombreUsuario(String numeroDeCliente) {
+		return ((ClienteDAO) this.getRepository()).obtenerClientePorUsuario(numeroDeCliente);
 	}
 	
 	public Cliente buscarPorNumeroDeCliente(String numeroDeCliente) {
@@ -49,7 +68,7 @@ public class ClienteService extends GenericService<Cliente> {
 		return ((ClienteDAO) this.getRepository()).obtenerClientePorUsuarioYPassword(usuario, password);
 	}
 	
-	public Cliente obtenerClientePorUsuario(int usuario) {
+	public Cliente obtenerClientePorUsuario(String usuario) {
 		return ((ClienteDAO) this.getRepository()).obtenerClientePorUsuario(usuario);
 	}
 }

@@ -46,7 +46,7 @@ public class ClienteDAO extends HibernateGenericDAO<Cliente> implements GenericR
 		return cliente;
 	}
 	
-	public Cliente obtenerClientePorUsuario(int usuario) {
+	public Cliente obtenerClientePorUsuario(String usuario) {
 		Session session = this.getHibernateTemplate().getSessionFactory().openSession();
 		Criteria criteria = session.createCriteria(Cliente.class);
 		criteria.add(Restrictions.eq("numeroDeCliente", usuario));
