@@ -18,6 +18,15 @@ var app = angular
     'ngSanitize',
     'ngTouch'
   ]);
+
+  app.run(function($rootScope,$location,$cookies){
+    $rootScope.$on('$routeChangeStart', function(event,next,current){
+      if(next.templateUrl == 'views/login.html' && $cookies.get('estaConectado')){
+        $location.path('/pedido');
+      }
+    });
+  });
+
   app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -63,7 +72,7 @@ var app = angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
-	  .when('/nuevocliente', {
+	    .when('/nuevocliente', {
         templateUrl: 'views/nuevocliente.html',
         controller: 'NuevoClienteCtrl',
         controllerAs: 'nuevocliente'
@@ -73,10 +82,10 @@ var app = angular
       });
   });
 
-
-  app.controller('AppCtrl', function($scope, $http) {
-  
-  }).directive('dirNuevopedido', function ($http){
+  app.controller('AppCtrl', function($scope) {
+    
+  });
+  app.directive('dirNuevopedido', function ($http){
     return {
       restrict: 'E',
       templateUrl: '/views/hacerpedido.html',

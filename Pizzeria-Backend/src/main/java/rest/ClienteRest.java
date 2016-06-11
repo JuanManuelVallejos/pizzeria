@@ -77,7 +77,8 @@ public class ClienteRest {
 	@Path("/ingresar/")
 	@Produces("application/json")
 	public Response ingresar(@FormParam("usuario") Integer usuario, @FormParam("password") String password) {
-		Cliente cliente;
+		Cliente cliente = new Cliente("juan", "dimeglio", "direccion", 37000000 , usuario, password, 40000000);
+		/*return c
 		try {
 			cliente = getClienteService().obtenerClientePorUsuarioYPassword(usuario, password);
 			
@@ -92,7 +93,7 @@ public class ClienteRest {
 	        
 		} catch (UsuarioOPasswordInvalido e) {
 			return Response.ok(-1).build();
-		}
+		}*/
         return Response.ok(cliente).build();
 	}
 }

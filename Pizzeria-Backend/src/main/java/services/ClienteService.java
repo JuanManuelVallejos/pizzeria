@@ -6,7 +6,6 @@ import exceptions.UsuarioConDNIExistenteException;
 import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
 import repositories.ClienteDAO;
-import org.apache.commons.codec.digest.DigestUtils;
 
 
 public class ClienteService extends GenericService<Cliente> {
@@ -49,7 +48,8 @@ public class ClienteService extends GenericService<Cliente> {
 	}
 	
 	public String encriptarPassword(String password){
-		return DigestUtils.md5Hex(password);
+		//return DigestUtils.md5Hex(password);
+		return password;
 	}
 	
 	public Cliente buscarPorDni(Integer dni) {
