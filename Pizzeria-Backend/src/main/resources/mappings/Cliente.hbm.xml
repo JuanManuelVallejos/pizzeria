@@ -15,7 +15,7 @@
 		<property name="telefono" column="TELEFONO"/>
 		<property name="numeroDeCliente" column="NUMERO_DE_CLIENTE"/>
 		<property name="password" column="PASSWORD"/>
-		
+		<property name="rol" column="ROL"/>
 		
 		
 		<list name="pedidos" cascade="save-update" lazy="false">

@@ -11,6 +11,7 @@
 		<property name="nombre" column="NOMBRE"/>
 		<property name="apellido" column="APELLIDO"/>
 		<property name="dni" column="DNI"/>
+		<property name="rol" column="ROL"/>
 		
 	</class>
 </hibernate-mapping>

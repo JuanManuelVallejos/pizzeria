@@ -8,7 +8,6 @@ public class GeneralService {
 	private PedidoService pedidoService;
 	private ProductoService productoService;
 	private PromocionService promocionService;
-	private RolService rolService;
 
 	public AdministradorService getAdministradorService() {
 		return administradorService;
@@ -58,11 +57,4 @@ public class GeneralService {
 		this.promocionService = promocionService;
 	}	
 	
-	public RolService getRolService() {
-		return rolService;
-	}
-
-	public void setRolService(RolService rolService) {
-		this.rolService = rolService;
-	}	
 }

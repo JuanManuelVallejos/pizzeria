@@ -7,8 +7,6 @@ public class AdministradorDTO {
 	private String apellido;
 	private Integer dni;
 	
-	
-	
 	public int getIdAdministrador() {
 		return idAdministrador;
 	}

@@ -77,10 +77,15 @@ public class ClienteRest {
 	@Path("/ingresar/")
 	@Produces("application/json")
 	public Response ingresar(@FormParam("usuario") Integer usuario, @FormParam("password") String password) {
-		Cliente cliente = new Cliente("juan", "dimeglio", "direccion", 37000000 , usuario, password, 40000000);
+		Cliente cliente;
+		if(usuario == 1 && password == "STEVERATON")
+			cliente = new Cliente("juan", "dimeglio", "direccion", 37000000 , usuario, password, 40000000);
+		else
+			cliente = null;
 		/*return c
 		try {
-			cliente = getClienteService().obtenerClientePorUsuarioYPassword(usuario, password);
+			cliente = getClienteService(
+			).obtenerClientePorUsuarioYPassword(usuario, password);
 			
 			ClassPathResource resource = new ClassPathResource("/META-INF/spring-persistence-context.xml");
 			XmlBeanFactory factory = new XmlBeanFactory(resource);

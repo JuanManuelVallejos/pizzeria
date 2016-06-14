@@ -14,9 +14,13 @@ public class Cliente extends Entity{
 	private Integer numeroDeCliente;
 	private String password;
 	private List<Pedido> pedidos = new ArrayList<Pedido>();
-	private Rol rol;
+	private String rol;
 	
-	public Cliente(){}
+	public static String ROL_ = "USER";
+	
+	public Cliente(){
+		this.rol = ROL_;
+	}
 	
 	public Cliente(String nombre, String apellido, String direccion, Integer dni, Integer nroDeCliente, String password, Integer nroDeTelefono){
 		this.setNombre(nombre);
@@ -26,6 +30,7 @@ public class Cliente extends Entity{
 		this.setNumeroDeCliente(nroDeCliente);
 		this.setPassword(password);
 		this.setTelefono(nroDeTelefono);
+		this.rol = ROL_;
 	}
 	
 	public String getNombre() {
@@ -84,11 +89,11 @@ public class Cliente extends Entity{
 		this.password = password;
 	}
 
-	public Rol getRol() {
+	public String getRol() {
 		return rol;
 	}
 
-	public void setRol(Rol rol) {
+	public void setRol(String rol) {
 		this.rol = rol;
 	}
 }

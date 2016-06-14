@@ -6,12 +6,18 @@ public class Administrador extends Entity{
 	private String nombre;
 	private String apellido;
 	private Integer dni;
+	private String rol;
 	
-	public Administrador(){}
+	public static String ROL_ = "ADMIN";
+	
+	public Administrador(){
+		this.rol = ROL_;
+	}
 	
 	public Administrador(String nombre, String apellido){
 		this.setNombre(nombre);
 		this.setApellido(apellido);
+		this.rol = ROL_;
 	}
 	
 	public Integer getDni() {
@@ -35,5 +41,13 @@ public class Administrador extends Entity{
 	
 	public void confirmarPedidoACliente(Pedido pedido, Cliente cliente){
 		pedido.pedidoEntregadoAlCliente(cliente);
+	}
+
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
 }
