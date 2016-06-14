@@ -1,2 +1,4 @@
 language: java
-script: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+jdk:
+- oraclejdk7
+install:  mvn install -Dmaven.compiler.target=1.8 -Dmaven.compiler.source=1.8 -DskipTests=true
