@@ -3,7 +3,7 @@ package dtos;
 public class AdministradorDTO {
 
 	private int idAdministrador;
-	private String nombre;
+	prate String nombre;
 	private String apellido;
 	private Integer dni;
 	
