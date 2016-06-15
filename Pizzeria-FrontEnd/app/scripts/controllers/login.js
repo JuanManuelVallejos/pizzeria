@@ -18,29 +18,21 @@ angular.module('pizzeriaFrontEndApp')
     $scope.usrConectado = {usuario: "", password: "", estaConectado: ""};
 
     var login = $q.defer();
-    var conect;
     login.promise.then(usrASesion);
 
     function usrASesion(data){
-      if(data.usrConectado == undefined){
-        conect = false;
-      }else{
-        console.log(data);
-        conect = true;
-        $scope.usrConectado.usuario = data.numeroDeCliente;
-        $scope.usrConectado.password = data.password;
-        $scope.usrConectado.estaConectado = conect;
-        $scope.usrConectado.nombre = data.nombre;
-        $scope.usrConectado.rol = data.rol;
-      }
+      console.log(data);
+      $scope.usrConectado.usuario = data.numeroDeCliente;
+      $scope.usrConectado.password = data.password;
+      $scope.usrConectado.estaConectado = true;
+      $scope.usrConectado.nombre = data.nombre;
+      $scope.usrConectado.rol = data.rol;
 
       console.log($scope.usrConectado);
 
-      $cookies.put('estaConectado', conect);
+      $cookies.put("estaConectado", true);
       $cookies.put('usuario', data);
-      if(conect){
-        $location.path('/pedido');
-      }
+      $location.path('/pedido');
     }
 
     $scope.ingresar = function() {

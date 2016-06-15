@@ -21,9 +21,10 @@ var app = angular
 
   app.run(function($rootScope,$location,$cookies){
     $rootScope.$on('$routeChangeStart', function(event,next,current){
-      if(next.templateUrl == 'views/login.html' && $cookies.get('estaConectado')){
+      console.log($cookies.get("estaConectado"));
+      if((next.templateUrl == 'views/login.html') && ($cookies.get("estaConectado"))){
         $location.path('/pedido');
-      }
+      };
     });
   });
 
@@ -76,6 +77,11 @@ var app = angular
         templateUrl: 'views/nuevocliente.html',
         controller: 'NuevoClienteCtrl',
         controllerAs: 'nuevocliente'
+      })
+      .when('/logout', {
+        templateUrl: 'views/main.html',
+        controller: 'LogoutCtrl',
+        controllerAs: 'logout'
       })
       .otherwise({
         redirectTo: '/'

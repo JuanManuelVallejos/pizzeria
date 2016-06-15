@@ -77,11 +77,7 @@ public class ClienteRest {
 	@Path("/ingresar/")
 	@Produces("application/json")
 	public Response ingresar(@FormParam("usuario") Integer usuario, @FormParam("password") String password) {
-		Cliente cliente;
-		if(usuario == 1 && password == "STEVERATON")
-			cliente = new Cliente("juan", "dimeglio", "direccion", 37000000 , usuario, password, 40000000);
-		else
-			cliente = null;
+		Cliente	cliente = new Cliente("juan", "dimeglio", "direccion", 37000000 , usuario, password, 40000000);
 		/*return c
 		try {
 			cliente = getClienteService(
