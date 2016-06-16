@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="pizzeriaFrontEndApp">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -27,7 +27,7 @@
           }
     </style>     
   </head>
-  <body ng-app="pizzeriaFrontEndApp">
+  <body ng-controller="AppCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -51,13 +51,13 @@
           <div class="collapse navbar-collapse active" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li><a href="#/login">Login</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/producto">Productos</a></li>
-			        <li><a ng-href="#/pedido">Pedido</a></li>
-			        <li><a ng-href="#/nuevocliente">Nuevo cliente</a></li>
-              <li><a ng-href="#/administrador">Administrador</a></li>
-              <li><a ng-href="#/logout">LOGOUT</a></li>
+              <li><a id="login" href="#/login">Login</a></li>
+              <li><a id="about" ng-href="#/about">About</a></li>
+              <li><a id="producto" ng-href="#/producto">Productos</a></li>
+			        <li><a id="pedido" ng-href="#/pedido">Pedido</a></li>
+			        <li><a id="nuevocliente" ng-href="#/nuevocliente">Nuevo cliente</a></li>
+              <li><a id="administrador" ng-href="#/administrador">Administrador</a></li>
+              <li><a id="logout" ng-href="#/logout">LOGOUT</a></li>
             </ul>
           </div>
         </div>

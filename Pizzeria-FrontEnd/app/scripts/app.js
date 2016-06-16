@@ -88,9 +88,28 @@ var app = angular
       });
   });
 
-  app.controller('AppCtrl', function($scope) {
-    
+  app.controller('AppCtrl', function($scope, $cookies) {
+    $("#logout").hide();
+    $("#producto").hide();
+    $("#pedido").hide();
+    $("#nuevocliente").hide();
+    $("#administrador").hide();
+    $scope.usrConectado = {usuario: "", password: "", estaConectado: "", rol:""};
+
+    $scope.setBotonesPorRol = function(rol){
+      console.log(rol);
+      if(rol == "USER"){
+        $("#pedido").show();
+        $("#login").hide();
+      }
+      if(rol == "ADMIN"){
+        $("#nuevocliente").show();
+        $("#administrador").show();
+        $("#producto").show();
+      }
+    }
   });
+
   app.directive('dirNuevopedido', function ($http){
     return {
       restrict: 'E',
@@ -112,3 +131,5 @@ var app = angular
       templateUrl: '/views/pedidosPendientesAdmin.html',
     };
   });
+
+  

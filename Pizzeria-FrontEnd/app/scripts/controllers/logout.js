@@ -15,8 +15,16 @@ angular.module('pizzeriaFrontEndApp')
       'Karma'
     ];
 
-    $scope.usrConectado = {usuario: "", password: "", estaConectado: ""};
+    $scope.usrConectado = {usuario: "", password: "", estaConectado: "", rol:""};
     $cookies.remove("estaConectado");
+      
+    $("#login").show();
+    $("#logout").hide();
+    $("#pedido").hide();
+    $("#producto").hide();
+    $("#nuevocliente").hide();
+    $("#administrador").hide();
+
     $location.path('/home');
 
   });

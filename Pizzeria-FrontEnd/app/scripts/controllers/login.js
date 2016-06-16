@@ -8,14 +8,15 @@
  * Controller of the pizzeriaFrontEndApp
  */
 angular.module('pizzeriaFrontEndApp')
-  .controller('LoginCtrl', function ($http, $scope, $q, $cookies, $location) {
+  .controller('LoginCtrl', function ($http, $scope, $q, $cookies, $location, $controller) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    $controller('AppCtrl', {$scope: $scope});
 
-    $scope.usrConectado = {usuario: "", password: "", estaConectado: ""};
+    $scope.usrConectado = {usuario: "", password: "", estaConectado: "", rol:""};
 
     var login = $q.defer();
     login.promise.then(usrASesion);
@@ -32,8 +33,17 @@ angular.module('pizzeriaFrontEndApp')
 
       $cookies.put("estaConectado", true);
       $cookies.put('usuario', data);
-      $location.path('/pedido');
+
+      if(data.rol == "ADMIN"){
+        $location.path('/');
+      }else{
+        $location.path('/pedido');
+      }
+      
+      $scope.setBotonesPorRol(data.rol);
     }
+
+    
 
     $scope.ingresar = function() {
      	$http({
@@ -50,13 +60,13 @@ angular.module('pizzeriaFrontEndApp')
             data: {usuario: $scope.usuario, password: $scope.contrasenia}
 
         }).success(function (data) {
-          login.resolve(data);
-          /*
-        	if(data == -1){
-        		alerte("El numero de cliente o password son incorrectos")
-        	}else{
-        		location = '#/pedido';
-        	} */    	
+          if(data == -1){
+            alert("El numero de cliente o password son incorrectos")
+          }else{
+            login.resolve(data);
+            $("#login").hide();
+            $("#logout").show();
+        	}
         });
      };
 

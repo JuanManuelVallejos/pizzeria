@@ -32,7 +32,7 @@ public class ClienteDAO extends HibernateGenericDAO<Cliente> implements GenericR
 		return (Cliente) criteria.uniqueResult();
 	}
 
-	public Cliente obtenerClientePorUsuarioYPassword(int usuario, String password) throws UsuarioOPasswordInvalido {
+	public Cliente obtenerClientePorUsuarioYPassword(Integer usuario, String password) throws UsuarioOPasswordInvalido {
 		Session session = this.getHibernateTemplate().getSessionFactory().openSession();
 		Criteria criteria = session.createCriteria(Cliente.class);
 		criteria.add(Restrictions.eq("numeroDeCliente", usuario));

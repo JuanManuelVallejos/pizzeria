@@ -77,24 +77,15 @@ public class ClienteRest {
 	@Path("/ingresar/")
 	@Produces("application/json")
 	public Response ingresar(@FormParam("usuario") Integer usuario, @FormParam("password") String password) {
-		Cliente	cliente = new Cliente("juan", "dimeglio", "direccion", 37000000 , usuario, password, 40000000);
-		/*return c
+		/*Cliente	cliente = new Cliente("juan", "dimeglio", "direccion", 37000000 , usuario, password, 40000000);*/
+		
+		Cliente	cliente;
 		try {
 			cliente = getClienteService(
 			).obtenerClientePorUsuarioYPassword(usuario, password);
-			
-			ClassPathResource resource = new ClassPathResource("/META-INF/spring-persistence-context.xml");
-			XmlBeanFactory factory = new XmlBeanFactory(resource);
-	        PropertyPlaceholderConfigurer ppc = (PropertyPlaceholderConfigurer) factory
-	                .getBean("persistence.propertyConfigurer");
-	        ppc.postProcessBeanFactory(factory);
-	        
-	        SessionFactory sessionFactory = (SessionFactory) factory.getBean("persistence.sessionFactory");
-	        sessionFactory.getCurrentSession().save(cliente);
-	        
 		} catch (UsuarioOPasswordInvalido e) {
 			return Response.ok(-1).build();
-		}*/
+		} 
         return Response.ok(cliente).build();
 	}
 }
