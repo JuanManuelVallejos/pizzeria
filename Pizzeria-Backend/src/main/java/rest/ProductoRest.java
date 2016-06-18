@@ -7,9 +7,11 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import model.ItemPedido;
 import model.Producto;
 import services.ProductoService;
 
@@ -43,14 +45,14 @@ public class ProductoRest {
 		return Response.ok(producto).build();
 	}
 
-	@GET
-	@Path("/imagen")
+	@POST
+	@Path("/productoToItemPedido/{id}/{cantidad}")
 	@Produces("application/json")
-	public List<Producto> getImagen(){
-		Producto p = new Producto("Muza", 90);
-		p.setPath("../images/cat1.jpg");
-		List<Producto> ps = new ArrayList<Producto>();
-		ps.add(p);
-		return ps;
+	public Response productoToItemPedido(@PathParam("id") Integer id, @PathParam("cantidad") Integer cantidad){
+		Producto producto = productoService.findById(id);
+		ItemPedido item = new ItemPedido();
+		item.setObjetoCompra(producto);	
+		item.setCantidad(cantidad);
+		return Response.ok(item).build();
 	}
 }
