@@ -2,12 +2,22 @@ package services;
 
 public class GeneralService {
 
+	private UsuarioService usuarioService;
+	private RolService rolService;
 	private AdministradorService administradorService;
 	private ClienteService clienteService;
 	private ItemPedidoService itemPedidoService;
 	private PedidoService pedidoService;
 	private ProductoService productoService;
 	private PromocionService promocionService;
+
+	public UsuarioService getUsuarioService() {
+		return usuarioService;
+	}
+
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
 
 	public AdministradorService getAdministradorService() {
 		return administradorService;
@@ -55,6 +65,15 @@ public class GeneralService {
 
 	public void setPromocionService(PromocionService promocionService) {
 		this.promocionService = promocionService;
+	}
+
+	public RolService getRolService() {
+		return rolService;
+	}
+
+	public void setRolService(RolService rolService) {
+		this.rolService = rolService;
 	}	
+	
 	
 }

@@ -56,7 +56,6 @@ public class Pedido extends Entity {
 	
 	public void pedidoEntregadoAlCliente(Cliente cliente){
 		this.setRealizado(true);
-		cliente.agregarPedidoAlHistorial(this);
 	}
 	
 

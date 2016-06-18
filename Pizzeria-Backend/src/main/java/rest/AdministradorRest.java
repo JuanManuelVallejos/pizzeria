@@ -37,7 +37,7 @@ public class AdministradorRest {
 	@Path("/crear")
 	@Produces("application/json")
 	public Response crearAdministrador(@FormParam("nombre") String nombre, @FormParam("apellido") String apellido){
-		Administrador admin = new Administrador(nombre, apellido);
+		Administrador admin = new Administrador();
 		getAdministradorService().save(admin);
 		return Response.ok(admin).build();
 	}

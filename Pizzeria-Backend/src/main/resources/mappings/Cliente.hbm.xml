@@ -3,26 +3,7 @@
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field"
 	default-cascade="save-update">
-	<class name="model.Cliente" table="CLIENTE">
-		<id column="ID" name="id">
-			<generator class="native" />
-		</id>
+	<subclass name="model.Cliente" discriminator-value="USER" extends="model.Rol">
 
-		<property name="nombre" column="NOMBRE"/>
-		<property name="apellido" column="APELLIDO"/>
-		<property name="dni" column="DNI"/>
-		<property name="direccion" column="DIRECCION"/>
-		<property name="telefono" column="TELEFONO"/>
-		<property name="numeroDeCliente" column="NUMERO_DE_CLIENTE"/>
-		<property name="password" column="PASSWORD"/>
-		<property name="rol" column="ROL"/>
-		
-		
-		<list name="pedidos" cascade="save-update" lazy="false">
-			<key column="CLIENTE_ID" />
-			<list-index column="ID" />
-			<one-to-many class="model.Pedido"/>
-		</list>
-		
-	</class>
+	</subclass>
 </hibernate-mapping>

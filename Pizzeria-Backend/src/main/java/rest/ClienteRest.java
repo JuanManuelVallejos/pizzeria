@@ -10,13 +10,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
-
-import exceptions.NombreUsuarioExistenteException;
-import exceptions.UsuarioConDNIExistenteException;
 import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
 import model.Pedido;
@@ -54,16 +47,6 @@ public class ClienteRest {
         return clientes;
 	}
 
-	@POST
-	@Path("/crear/{nombre}/{apellido}/{direccion}/{dni}/{nroDeCliente}/{password}/{nroDeTelefono}")
-	@Produces("application/json")
-	public Response crearCliente(@PathParam("nombre") String nombre, @PathParam("apellido") String apellido,@PathParam("direccion") String direccion,
-			@PathParam("dni") Integer dni, @PathParam("nroDeCliente") Integer nroDeCliente, @PathParam("password") String password, @PathParam("nroDeTelefono") Integer nroDeTelefono) throws UsuarioConDNIExistenteException, NombreUsuarioExistenteException{
-		
-		Cliente cliente = this.getClienteService().darDeAltaNuevoCliente(nombre, apellido,direccion, dni, nroDeCliente,password, nroDeTelefono);
-		this.getClienteService().save(cliente);
-		return Response.ok(cliente).build();
-	}
 
 	@GET
 	@Path("/pedidosActivos/{idCliente}")
