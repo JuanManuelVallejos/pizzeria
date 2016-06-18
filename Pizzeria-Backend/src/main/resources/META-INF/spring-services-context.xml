@@ -8,8 +8,6 @@
 
 	<!-- beans de spring -->
 	<bean id="services.general" class="services.GeneralService">
-    	<property name="usuarioService" ref="services.usuario" />
-    	<property name="rolService" ref="services.rol" />	
 		<property name="administradorService" ref="services.administrador" />	
 		<property name="clienteService" ref="services.cliente" />
 		<property name="itemPedidoService" ref="services.itempedido" />
@@ -18,12 +16,6 @@
 		<property name="promocionService" ref="services.promocion" />	
 	</bean>
 
-	<bean id="services.usuario" class="services.UsuarioService">
-		<property name="repository" ref="persistence.usuariorepository" />
-	</bean>
-	<bean id="services.rol" class="services.RolService">
-		<property name="repository" ref="persistence.rolrepository" />
-	</bean>
 	<bean id="services.administrador" class="services.AdministradorService">
 		<property name="repository" ref="persistence.administradorrepository" />
 	</bean>

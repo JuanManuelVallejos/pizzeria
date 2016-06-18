@@ -1,6 +1,0 @@
-/.settings
-/target
-.classpath
-.project
-/Pizzeria-Backend/src/main/resources/META-INF/jdbc.properties
-/Pizzeria-Backend/src/main/resources/META-INF/hibernate.properties

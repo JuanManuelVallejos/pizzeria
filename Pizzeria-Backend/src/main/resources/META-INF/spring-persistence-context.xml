@@ -98,12 +98,6 @@ http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 	<!-- ________________________________________ -->
 
 
-	<bean id="persistence.usuariorepository" class="repositories.UsuarioDAO">
-		<property name="sessionFactory" ref="persistence.sessionFactory" />
-	</bean>
-	<bean id="persistence.rolrepository" class="repositories.RolDAO">
-		<property name="sessionFactory" ref="persistence.sessionFactory" />
-	</bean>
 	<bean id="persistence.administradorrepository" class="repositories.AdministradorDAO">
 		<property name="sessionFactory" ref="persistence.sessionFactory" />
 	</bean>

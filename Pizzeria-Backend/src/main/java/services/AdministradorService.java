@@ -10,12 +10,10 @@ public class AdministradorService extends GenericService<Administrador> {
 	public AdministradorDTO convertAdministradorADTO(Administrador admin){
 		AdministradorDTO admindto = new AdministradorDTO();
 		admindto.setIdAdministrador(admin.getId());
-		admindto.setNombre(admin.getNombreRol());
+		admindto.setNombre(admin.getNombre());
+		admindto.setApellido(admin.getApellido());
+		admindto.setDni(admin.getDni());
 		return admindto;
-	}
-	
-	public void init(){
-		this.save(new Administrador());
 	}
 	
 }
