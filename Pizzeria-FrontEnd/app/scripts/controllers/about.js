@@ -14,14 +14,4 @@ angular.module('pizzeriaFrontEndApp')
       'AngularJS',
       'Karma'
     ];
-	
-	  $scope.cargarImagen = function(){
-    $http.get('http://localhost:8080/Pizzeria-Backend/rest/productos/imagen').success(function (data) {
-         
-		  $scope.myHTML = data;
-      });
-  }
-  
-  $scope.cargarImagen()
-	
-  });
+});

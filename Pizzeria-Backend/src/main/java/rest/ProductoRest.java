@@ -1,6 +1,6 @@
 package rest;
 
-import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.FormParam;
@@ -45,8 +45,12 @@ public class ProductoRest {
 
 	@GET
 	@Path("/imagen")
-	@Produces("application/html")
-	public Response getImagen(){
-		return Response.ok("<img src='../images/cat1.jpg' />").build();
+	@Produces("application/json")
+	public List<Producto> getImagen(){
+		Producto p = new Producto("Muza", 90);
+		p.setPath("../images/cat1.jpg");
+		List<Producto> ps = new ArrayList<Producto>();
+		ps.add(p);
+		return ps;
 	}
 }

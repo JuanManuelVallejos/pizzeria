@@ -8,6 +8,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import model.Administrador;
+import model.Cliente;
 import model.Rol;
 import services.AdministradorService;
 import services.ClienteService;
@@ -55,11 +57,9 @@ public class RolRest {
 	@POST
 	@Path("/init")
 	@Produces("application/json")
-	public Response inicializarRoles(){
-//		List<Rol> roles = this.getRolService().inicializarRoles();
-		this.getClienteService().init();
-		this.getAdministradorService().init();
-		return Response.ok("").build();
+	public List<Rol> inicializarRoles(){
+		this.getRolService().inicializarRoles();
+		return  this.obtenerTodosLosRoles();
 	}
 
 }

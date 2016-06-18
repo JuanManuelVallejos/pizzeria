@@ -1,9 +1,5 @@
 package dtos;
 
-import java.util.ArrayList;
-
-import model.Pedido;
-
 public class ProductoDTO {
 
 	private int idProducto;

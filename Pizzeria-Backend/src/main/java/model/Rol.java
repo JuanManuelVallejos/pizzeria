@@ -18,7 +18,4 @@ public class Rol extends Entity{
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}
-
-
-	
 }
