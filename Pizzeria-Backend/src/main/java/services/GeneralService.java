@@ -4,10 +4,19 @@ public class GeneralService {
 
 	private AdministradorService administradorService;
 	private ClienteService clienteService;
+	private UsuarioService usuarioService;
 	private ItemPedidoService itemPedidoService;
 	private PedidoService pedidoService;
 	private ProductoService productoService;
 	private PromocionService promocionService;
+	
+	public UsuarioService getUsuarioService() {
+		return usuarioService;
+	}
+
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
 
 	public AdministradorService getAdministradorService() {
 		return administradorService;

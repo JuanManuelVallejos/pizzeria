@@ -10,33 +10,29 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
-
 import exceptions.NombreUsuarioExistenteException;
 import exceptions.UsuarioConDNIExistenteException;
 import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
 import model.Pedido;
-import services.ClienteService;
+import model.Usuario;
 import services.PedidoService;
+import services.UsuarioService;
 
-@Path("/clientes")
-public class ClienteRest {
+@Path("/usuarios")
+public class UsuarioRest {
 	
-	private ClienteService clienteService;
+	private UsuarioService usuarioService;
 	private PedidoService pedidoService;
 	
-	public ClienteService getClienteService() {
-		return clienteService;
+	public UsuarioService getUsuarioService() {
+		return usuarioService;
 	}
 
-	public void setClienteService(ClienteService clienteService) {
-		this.clienteService = clienteService;
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
 	}
-	
+
 	public PedidoService getPedidoService() {
 		return pedidoService;
 		
@@ -49,9 +45,9 @@ public class ClienteRest {
 	@GET
 	@Path("/listar")
 	@Produces("application/json")
-	public List<Cliente> obtenerTodosLosClientes() {
-		List<Cliente> clientes = getClienteService().retriveAll();
-        return clientes;
+	public List<Usuario> obtenerTodosLosUsuarios() {
+		List<Usuario> usuarios = getUsuarioService().retriveAll();
+        return usuarios;
 	}
 
 	@POST
@@ -60,8 +56,8 @@ public class ClienteRest {
 	public Response crearCliente(@PathParam("nombre") String nombre, @PathParam("apellido") String apellido,@PathParam("direccion") String direccion,
 			@PathParam("dni") Integer dni, @PathParam("nombreUsuario") String nombreUsuario, @PathParam("password") String password, @PathParam("nroDeTelefono") Integer nroDeTelefono) throws UsuarioConDNIExistenteException, NombreUsuarioExistenteException{
 		
-		Cliente cliente = this.getClienteService().darDeAltaNuevoCliente(nombre, apellido,direccion, dni, nombreUsuario,password, nroDeTelefono);
-		this.getClienteService().save(cliente);
+		Cliente cliente = this.getUsuarioService().darDeAltaNuevoCliente(nombre, apellido,direccion, dni, nombreUsuario,password, nroDeTelefono);
+		this.getUsuarioService().save(cliente);
 		return Response.ok(cliente).build();
 	}
 
@@ -81,7 +77,7 @@ public class ClienteRest {
 		
 		Cliente	cliente;
 		try {
-			cliente = getClienteService(
+			cliente = getUsuarioService(
 			).obtenerClientePorUsuarioYPassword(usuario, password);
 		} catch (UsuarioOPasswordInvalido e) {
 			return Response.ok(-1).build();

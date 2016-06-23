@@ -3,15 +3,7 @@
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field"
 	default-cascade="save-update">
-	<class name="model.Administrador" table="ADMINISTRADOR">
-		<id column="ID" name="id">
-			<generator class="native" />
-		</id>
+	<subclass name="model.Administrador" discriminator-value="ADMIN" extends="model.Usuario">
 
-		<property name="nombre" column="NOMBRE"/>
-		<property name="apellido" column="APELLIDO"/>
-		<property name="dni" column="DNI"/>
-		<property name="rol" column="ROL"/>
-		
-	</class>
+	</subclass>
 </hibernate-mapping>

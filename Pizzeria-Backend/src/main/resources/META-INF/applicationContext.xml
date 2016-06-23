@@ -28,6 +28,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 
 	<jaxrs:server id="globalService">
 		<jaxrs:serviceBeans>
+			<ref bean="usuariosRest" />
 			<ref bean="administradoresRest" />
 			<ref bean="clientesRest" />
 			<ref bean="itemsPedidosRest" />
@@ -49,6 +50,10 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 		</jaxrs:features>
 	</jaxrs:server>
 	
+	<bean id="usuariosRest" class="rest.UsuarioRest">
+		<property name="usuarioService" ref="services.usuario" />
+		<property name="pedidoService" ref="services.pedido" />
+	</bean>
 	<bean id="administradoresRest" class="rest.AdministradorRest">
 		<property name="administradorService" ref="services.administrador" />
 	</bean>
