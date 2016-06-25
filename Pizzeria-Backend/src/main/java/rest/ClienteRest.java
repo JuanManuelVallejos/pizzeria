@@ -10,11 +10,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
-
 import exceptions.NombreUsuarioExistenteException;
 import exceptions.UsuarioConDNIExistenteException;
 import exceptions.UsuarioOPasswordInvalido;
@@ -76,7 +71,7 @@ public class ClienteRest {
 	@POST
 	@Path("/ingresar/")
 	@Produces("application/json")
-	public Response ingresar(@FormParam("usuario") Integer usuario, @FormParam("password") String password) {
+	public Response ingresar(@FormParam("usuario") String usuario, @FormParam("password") String password) {
 		/*Cliente	cliente = new Cliente("juan", "dimeglio", "direccion", 37000000 , usuario, password, 40000000);*/
 		
 		Cliente	cliente;

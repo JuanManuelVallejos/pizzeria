@@ -23,7 +23,7 @@ angular.module('pizzeriaFrontEndApp')
 
     function usrASesion(data){
       console.log(data);
-      $scope.usrConectado.usuario = data.numeroDeCliente;
+      $scope.usrConectado.usuario = data.nombreUsuario;
       $scope.usrConectado.password = data.password;
       $scope.usrConectado.estaConectado = true;
       $scope.usrConectado.nombre = data.nombre;

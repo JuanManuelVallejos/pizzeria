@@ -65,7 +65,7 @@ public class ClienteService extends GenericService<Cliente> {
 		return ((ClienteDAO) this.getRepository()).buscarPorNumeroDeCliente(numeroDeCliente);
 	}
 
-	public Cliente obtenerClientePorUsuarioYPassword(Integer usuario, String password) throws UsuarioOPasswordInvalido {
+	public Cliente obtenerClientePorUsuarioYPassword(String usuario, String password) throws UsuarioOPasswordInvalido {
 		return ((ClienteDAO) this.getRepository()).obtenerClientePorUsuarioYPassword(usuario, password);
 	}
 	
