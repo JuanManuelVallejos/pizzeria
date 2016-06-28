@@ -44,6 +44,22 @@ angular.module('pizzeriaFrontEndApp')
 	    return false;
 	}
 
+	$scope.realizarPedido = function(){
+	    $http({
+                method: 'POST',
+                url: "http://localhost:8080/Pizzeria-Backend/rest/pedidos/realizar",
+                data: {itemsPedido: $scope.itemsPedidos},
+				  headers: {
+				    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+				  }
+            })
+            .success(function(data) {
+                alert("DATA  : " + data);
+            }).error(function(data, status, headers, config) {
+                alert("Could not save new person");
+            });
+	  }
+
 	$scope.cargarProductos();
 
   });

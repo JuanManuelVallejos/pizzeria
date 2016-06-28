@@ -242,14 +242,14 @@
 					
 				</ul>
 				<div class="tab-content" style="overflow: scroll;" id="scroll">
-					<div class="tab-pane active" id="tab_default_1">
+					<div class="tab-pane active" id="tabNuevoPedido">
 						<dir-nuevopedido></dir-nuevopedido>
 					</div>
-					<div class="tab-pane" id="tab_default_3">
+					<div class="tab-pane" id="tabPedirPromocion">
 						Pedir promocion
 						<dir-pedirpromocion></dir-pedirpromocion>
 					</div>
-					<div class="tab-pane" id="tab_default_2">
+					<div class="tab-pane" id="tabPedidosRealizados">
 						Pedidos Realizados
 						<dir-pedidosrealizados></dir-pedidosrealizados>
 					</div>
@@ -269,7 +269,7 @@
 		<br>
 		<h3>TOTAL.............${{total}}</h3>
 
-        <button type="button" class="btn btn-success">Realizar pedido</button>
+        <button type="button" class="btn btn-success" ng-click="realizarPedido()">Realizar pedido</button>
 
 	</div>
 </div>
