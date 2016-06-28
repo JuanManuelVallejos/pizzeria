@@ -2,10 +2,15 @@ package rest;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
 
+import model.ItemPedido;
 import model.Pedido;
 import services.ClienteService;
 import services.PedidoService;
@@ -40,14 +45,13 @@ public class PedidoRest {
         return pedidos;
 	}
 
-//	@POST
-//	@Path("/nuevo/{idCliente}/{idsItemPedido}")
-//	@Produces("application/json")
-//	public Response nuevoPedido(@PathParam("idCliente") Integer idCliente, @PathParam("idsItemPedido") String idsItemPedido){
-//		List<String> idsItemsAsList = Arrays.asList(StringUtils.split(idsItemPedido, ","));
-//		Cliente cliente = new Cliente(nombre, apellido,direccion, dni, nroDeCliente,password);
-//		getClienteService().save(cliente);
-//		return Response.ok(cliente).build();
-//	}
+	@POST
+	@Path("/realizar")
+	@Consumes("application/x-www-form-urlencoded")
+	@Produces("application/json")
+	public Response nuevoPedido(@FormParam("itemsPedido") List<ItemPedido> itemsPedido){
+
+		return Response.ok(1).build();
+	}
 	
 }
