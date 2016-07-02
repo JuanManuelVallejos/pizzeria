@@ -8,7 +8,7 @@
  * Controller of the pizzeriaFrontEndApp
  */
 angular.module('pizzeriaFrontEndApp')
-  .controller('PedidoCtrl', function ($scope, $http) {
+  .controller('PedidoCtrl', function ($http, $scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -47,8 +47,9 @@ angular.module('pizzeriaFrontEndApp')
 	$scope.realizarPedido = function(){
 	    $http({
                 method: 'POST',
+                isArray: true,
                 url: "http://localhost:8080/Pizzeria-Backend/rest/pedidos/realizar",
-                data: {itemsPedido: $scope.itemsPedidos},
+                data: { itemsPedido: $scope.itemsPedidos },
 				  headers: {
 				    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
 				  }

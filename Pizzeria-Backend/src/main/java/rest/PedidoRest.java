@@ -10,7 +10,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import model.ItemPedido;
 import model.Pedido;
 import services.ClienteService;
 import services.PedidoService;
@@ -49,7 +48,7 @@ public class PedidoRest {
 	@Path("/realizar")
 	@Consumes("application/x-www-form-urlencoded")
 	@Produces("application/json")
-	public Response nuevoPedido(@FormParam("itemsPedido") List<ItemPedido> itemsPedido){
+	public Response nuevoPedido(@FormParam("itemsPedido") List<String> itemsPedido){
 
 		return Response.ok(1).build();
 	}
