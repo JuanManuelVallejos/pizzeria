@@ -17,6 +17,8 @@ angular.module('pizzeriaFrontEndApp')
 
     $scope.total = 0;
     $scope.itemsPedidos = [];
+    $scope.itemsId = [];
+    $scope.itemsCantidad = [];
 
 	$scope.cargarProductos = function(){
 	    $http.get('http://localhost:8080/Pizzeria-Backend/rest/productos/listar').success(function (data) {
@@ -28,6 +30,8 @@ angular.module('pizzeriaFrontEndApp')
 		$http.post('http://localhost:8080/Pizzeria-Backend/rest/productos/productoToItemPedido/' + producto.id + '/' + cantidad).success(function (itemPedido) {
 			if(!estaAgregadoElProducto(producto, cantidad)){
 				$scope.itemsPedidos.push(itemPedido);
+				$scope.itemsId.push(producto.id.toString());
+				$scope.itemsCantidad.push(cantidad.toString());
 				$scope.total += itemPedido.objetoCompra.precio * cantidad;
 			}
 		});
@@ -45,20 +49,11 @@ angular.module('pizzeriaFrontEndApp')
 	}
 
 	$scope.realizarPedido = function(){
-	    $http({
-                method: 'POST',
-                isArray: true,
-                url: "http://localhost:8080/Pizzeria-Backend/rest/pedidos/realizar",
-                data: { itemsPedido: $scope.itemsPedidos },
-				  headers: {
-				    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-				  }
-            })
-            .success(function(data) {
-                alert("DATA  : " + data);
-            }).error(function(data, status, headers, config) {
-                alert("Could not save new person");
-            });
+
+		$http.post('http://localhost:8080/Pizzeria-Backend/rest/pedidos/realizar/' + $scope.itemsId + '/' + $scope.itemsCantidad).success(function (data) {
+        
+			alert('Pedido agregado correctamente, disfrute su alimento');
+      });
 	  }
 
 	$scope.cargarProductos();
