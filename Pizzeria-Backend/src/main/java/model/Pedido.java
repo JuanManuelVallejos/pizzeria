@@ -1,15 +1,14 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class Pedido extends Entity {
 	
-	private ArrayList<ItemPedido> items;
+	private List<ItemPedido> items = new ArrayList<ItemPedido>();
 	private boolean realizado = false;
 	private Cliente cliente;
-	
-	
 	
 	public Cliente getCliente() {
 		return cliente;
@@ -24,15 +23,15 @@ public class Pedido extends Entity {
 	public void agregarItemPedido(ItemPedido item){
 		this.getItems().add(item);
 	}
-
-	public ArrayList<ItemPedido> getItems() {
+	
+	public List<ItemPedido> getItems() {
 		return items;
 	}
 
-	public void setItems(ArrayList<ItemPedido> items) {
+	public void setItems(List<ItemPedido> items) {
 		this.items = items;
 	}
-	
+
 	public boolean isRealizado() {
 		return realizado;
 	}

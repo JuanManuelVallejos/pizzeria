@@ -1,8 +1,8 @@
 package services;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import dtos.PedidoDTO;
 import model.Cliente;
 import model.ItemPedido;
 import model.Pedido;
@@ -77,14 +77,5 @@ public class PedidoService extends GenericService<Pedido> {
 		pedido.setRealizado(true);
 		this.getRepository().save(pedido);
 	}
-	
-	public PedidoDTO convertPedidoADTO(Pedido pedido){
-		PedidoDTO pedidoDTO = new PedidoDTO();
-		pedidoDTO.setIdPedido(pedido.getId());
-		pedidoDTO.setIdCliente(pedido.getCliente().getId());
-		pedidoDTO.setRealizado(pedido.isRealizado());
-		pedidoDTO.setItems(pedido.getItems());
 
-		return pedidoDTO;
-	}
 }

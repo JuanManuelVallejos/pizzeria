@@ -9,8 +9,8 @@
 		</id>
 
 		<property name="cantidad" column="CANTIDAD"/>
-		<one-to-one name="objetoCompra" class="model.ObjetoCompra"
-			cascade="save-update" lazy="false"></one-to-one>
+		<many-to-one name="objetoCompra" class="model.ObjetoCompra"
+			cascade="save-update" lazy="false"></many-to-one>
 
 	</class>
 </hibernate-mapping>

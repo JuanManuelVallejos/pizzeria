@@ -12,11 +12,12 @@
 		
 		<one-to-one name="cliente" class="model.Cliente"
 			cascade="save-update" lazy="false"></one-to-one>
-		
-		<list name="items" cascade="save-update">
-        	<key column="PEDIDO_ID"/>
-        	<list-index column="ID"/>
-        	<one-to-many class="model.ItemPedido"/>
-    	</list>
+    	
+    	<list name="items" inverse="false" cascade="all" lazy="false">
+			<key column="itemPedidoID" />
+			<list-index column="id" />
+			<many-to-many class="model.ItemPedido" unique="false"/>
+		</list>
+    	
 	</class>
 </hibernate-mapping>
