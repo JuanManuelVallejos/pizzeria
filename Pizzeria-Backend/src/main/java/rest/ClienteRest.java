@@ -76,7 +76,7 @@ public class ClienteRest {
 		
 		Cliente	cliente;
 		try {
-			cliente = getClienteService(
+			cliente = (Cliente) getClienteService(
 			).obtenerClientePorUsuarioYPassword(usuario, password);
 		} catch (UsuarioOPasswordInvalido e) {
 			return Response.ok(-1).build();

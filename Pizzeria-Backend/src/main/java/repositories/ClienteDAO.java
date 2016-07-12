@@ -8,6 +8,7 @@ import org.hibernate.criterion.Restrictions;
 
 import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
+import model.Usuario;
 
 public class ClienteDAO extends HibernateGenericDAO<Cliente> implements GenericRepository<Cliente> {
 

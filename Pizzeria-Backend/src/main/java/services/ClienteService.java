@@ -7,6 +7,7 @@ import exceptions.NombreUsuarioExistenteException;
 import exceptions.UsuarioConDNIExistenteException;
 import exceptions.UsuarioOPasswordInvalido;
 import model.Cliente;
+import model.Usuario;
 import repositories.ClienteDAO;
 
 
@@ -66,7 +67,8 @@ public class ClienteService extends GenericService<Cliente> {
 	}
 
 	public Cliente obtenerClientePorUsuarioYPassword(String usuario, String password) throws UsuarioOPasswordInvalido {
-		return ((ClienteDAO) this.getRepository()).obtenerClientePorUsuarioYPassword(usuario, password);
+		String encryptPassword = this.encriptarPassword(password);
+		return ((ClienteDAO) this.getRepository()).obtenerClientePorUsuarioYPassword(usuario, encryptPassword);
 	}
 	
 	public Cliente obtenerClientePorUsuario(String usuario) {
