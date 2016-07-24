@@ -69,6 +69,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 		<property name="productoService" ref="services.producto" />
 		<property name="itemPedidoService" ref="services.itempedido" />
 		<property name="objetoCompraService" ref="services.objetocompra" />
+		<property name="clienteService" ref="services.cliente" />
 	</bean>
 	<bean id="productosRest" class="rest.ProductoRest">
 		<property name="productoService" ref="services.producto" />

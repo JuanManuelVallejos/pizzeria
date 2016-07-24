@@ -8,7 +8,7 @@
  * Controller of the pizzeriaFrontEndApp
  */
 angular.module('pizzeriaFrontEndApp')
-  .controller('PedidoCtrl', function ($http, $scope) {
+  .controller('PedidoCtrl', function ($http, $scope, $cookies) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -19,6 +19,7 @@ angular.module('pizzeriaFrontEndApp')
     $scope.itemsPedidos = [];
     $scope.itemsId = [];
     $scope.itemsCantidad = [];
+    $scope.pedidosRealizados = [];
 
 	$scope.cargarProductos = function(){
 	    $http.get('http://localhost:8080/Pizzeria-Backend/rest/productos/listar').success(function (data) {
@@ -50,11 +51,17 @@ angular.module('pizzeriaFrontEndApp')
 
 	$scope.realizarPedido = function(){
 
-		$http.post('http://localhost:8080/Pizzeria-Backend/rest/pedidos/realizar/' + $scope.itemsId + '/' + $scope.itemsCantidad).success(function (data) {
+		$http.post('http://localhost:8080/Pizzeria-Backend/rest/pedidos/realizar/' + $scope.itemsId + '/' + $scope.itemsCantidad + '/' + + $cookies.get('idCliente')).success(function (data) {
         
 			alert('Pedido agregado correctamente, disfrute su alimento');
       });
-	  }
+	}
+
+	$scope.listarPedidos = function(){
+		$http.get('http://localhost:8080/Pizzeria-Backend/rest/pedidos/historialPedidos/' + $cookies.get('idCliente')).success(function (data) {
+			$scope.pedidosRealizados = data;
+      });
+	}
 
 	$scope.cargarProductos();
 

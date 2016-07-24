@@ -33,6 +33,7 @@ angular.module('pizzeriaFrontEndApp')
 
       $cookies.put("estaConectado", true);
       $cookies.put('usuario', data);
+      $cookies.put('idCliente', data.id);
 
       if(data.rol == "ADMIN"){
         $location.path('/');

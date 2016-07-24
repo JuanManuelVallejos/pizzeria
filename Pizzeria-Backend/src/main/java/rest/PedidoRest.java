@@ -13,6 +13,8 @@ import javax.ws.rs.core.Response;
 
 import org.apache.commons.lang3.StringUtils;
 
+import dtos.PedidoDTO;
+import model.Cliente;
 import model.ItemPedido;
 import model.Pedido;
 import model.Producto;
@@ -78,21 +80,30 @@ public class PedidoRest {
 		List<Pedido> pedidos = getPedidoService().retriveAll();
         return pedidos;
 	}
-
-//	@POST
-//	@Path("/realizar")
-//	@Consumes("application/x-www-form-urlencoded")
-//	@Produces("application/json")
-//	public Response nuevoPedido(@FormParam("itemsPedido") List<String> itemsPedido){
-//
-//		return Response.ok(1).build();
-//	}
 	
+	@GET
+	@Path("/historialPedidos/{idCliente}")
+	@Produces("application/json")
+	public List<PedidoDTO> obtenerPedidosPorCliente(@PathParam("idCliente") Integer idCliente) {
+		Cliente cliente = getClienteService().findById(idCliente);
+		List<PedidoDTO> pedidosDTO = new ArrayList<PedidoDTO>();
+		List<Pedido> pedidos = getPedidoService().GetPedidosPorCliente(idCliente);
+		for (Pedido pedido : pedidos) {
+			PedidoDTO pedidoDTO = new PedidoDTO();
+			pedidoDTO.seatearRealizado(pedido.isRealizado());
+			pedidoDTO.setImporte(pedido.totalCompra());
+			pedidoDTO.setDireccion(cliente.getDireccion());
+			pedidosDTO.add(pedidoDTO);
+		}
+		
+        return pedidosDTO;
+	}
 	
 	@POST
-	@Path("/realizar/{items}/{cantidades}")
+	@Path("/realizar/{items}/{cantidades}/{idCliente}")
 	@Produces("application/json")
-	public Response newPedido(@PathParam("items") String items,@PathParam("cantidades") String cantidades ){
+	public Response newPedido(@PathParam("items") String items,@PathParam("cantidades") String cantidades,
+			@PathParam("idCliente") Integer idCliente){
 		
 		List<String> idsItems = Arrays.asList(StringUtils.split(items, ","));
 		List<String> cantsItems = Arrays.asList(StringUtils.split(cantidades, ","));
@@ -105,7 +116,7 @@ public class PedidoRest {
 			itemsPedido.add(item);
 		}
 		Pedido pedido = new Pedido();
-		
+		pedido.setCliente(getClienteService().findById(idCliente));
 		pedido.setItems(itemsPedido);
 		this.getPedidoService().save(pedido);
 		return Response.ok(pedido).build();

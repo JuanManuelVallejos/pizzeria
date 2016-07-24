@@ -13,12 +13,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Viernes 15-05-2016 21:00 hs</td>
-        <td>-2 Muzzarela Grande</td>
-        <td>$150</td>
-        <td>Suipaches 1345</td>
-        <td>Si</td>
+      <tr ng-repeat="pedido in pedidosRealizados">
+        <td>-</td>
+        <td>-</td>
+        <td>{{pedido.importe}}</td>
+        <td>{{pedido.direccion}}</td>
+        <td>{{pedido.realizado}}</td>
       </tr>
     </tbody>
   </table>

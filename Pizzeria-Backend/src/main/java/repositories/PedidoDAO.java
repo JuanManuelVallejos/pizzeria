@@ -30,4 +30,12 @@ public class PedidoDAO extends HibernateGenericDAO<Pedido> implements GenericRep
 	public boolean tienePedidosActivos(int idCliente){
 		return this.obtenerPedidosActivosDeCliente(idCliente).size() > 0;
 	}
+
+	public List<Pedido> obtenerPedidosPorCliente(Integer idCliente) {
+		Session session = this.getHibernateTemplate().getSessionFactory().openSession();
+		Criteria criteria = session.createCriteria(Pedido.class);
+		criteria.createCriteria("cliente").add(Restrictions.eq("id", idCliente));
+		
+		return criteria.list();
+	}
 }

@@ -78,4 +78,8 @@ public class PedidoService extends GenericService<Pedido> {
 		this.getRepository().save(pedido);
 	}
 
+	public List<Pedido> GetPedidosPorCliente(Integer idCliente) {
+		return ((PedidoDAO) this.getRepository()).obtenerPedidosPorCliente(idCliente);
+	}
+
 }
