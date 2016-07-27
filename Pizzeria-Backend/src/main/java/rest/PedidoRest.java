@@ -116,7 +116,9 @@ public class PedidoRest {
 			itemsPedido.add(item);
 		}
 		Pedido pedido = new Pedido();
-		pedido.setCliente(getClienteService().findById(idCliente));
+		Cliente cliente = getClienteService().findById(idCliente);
+		pedido.setCliente(cliente);
+//		cliente.agregarPedidoAlHistorial(pedido); El doble conocimiento rompe TOO
 		pedido.setItems(itemsPedido);
 		this.getPedidoService().save(pedido);
 		return Response.ok(pedido).build();

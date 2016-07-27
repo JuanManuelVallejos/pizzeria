@@ -10,8 +10,8 @@
 		
 		<property name="realizado" column="REALIZADO"/>
 		
-		<one-to-one name="cliente" class="model.Cliente"
-			cascade="save-update" lazy="false"></one-to-one>
+		<many-to-one name="cliente" class="model.Cliente"
+			cascade="save-update" lazy="false"></many-to-one>
     	
     	<list name="items" inverse="false" cascade="all" lazy="false">
 			<key column="itemPedidoID" />
